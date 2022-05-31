@@ -1,0 +1,40 @@
+#cloud-config
+
+timezone: Asia/Tokyo
+
+groups:
+  - cloud-users
+
+users:
+  - default
+  - name: oci-user
+    groups: cloud-users
+    shell: /bin/bash
+    sudo: ["ALL=(ALL) NOPASSWD:ALL"]
+    ssh_authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILp8Q54s1D7xmWArq5pctCrvhOad38bBamwwsEUOrOph oci-user
+
+apt:
+  preserve_sources_list: true
+  sources:
+    docker.list:
+      source: deb [arch=arm64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu focal stable
+
+package_update: true
+package_upgrade: true
+package_reboot_if_required: true
+
+packages:
+  - ca-certificates
+  - curl
+  - gnupg
+  - lsb-release
+
+runcmd:
+  # Install Docker.
+  - curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+  - apt-get update
+  - apt-get install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
+  # Update iptables
+  - wget https://gist.githubusercontent.com/ViaSnake/88adf1184e930a532eb6a0c326f5558d/raw/c93ca899e8803b3b52ef288182ef101d64eb6ea1/rules.v4 -O /etc/iptables/rules.v4
+  - iptables-restore < /etc/iptables/rules.v4
