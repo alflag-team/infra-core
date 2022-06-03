@@ -30,7 +30,7 @@ packages:
   - gnupg
   - lsb-release
   - ocfs2-tools
-  - linux-modules-extra-5.15.0-1006-oracle
+  - linux-modules-extra-5.15.0-1007-oracle
   - nano
 
 runcmd:
@@ -46,3 +46,5 @@ runcmd:
   - groupdel ubuntu
   # Create directory
   - mkdir /mnt/shared
+  - mkdir /mnt/shared/couch-data
+  - mkdir /mnt/shared/influx-data
