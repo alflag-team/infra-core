@@ -42,3 +42,5 @@ runcmd:
   # Remove default user
   - userdel -r ubuntu
   - groupdel ubuntu
+  # Create directory
+  - mkdir /mnt/shared
