@@ -31,6 +31,7 @@ packages:
   - lsb-release
   - ocfs2-tools
   - linux-modules-extra-5.15.0-1006-oracle
+  - nano
 
 runcmd:
   # Install Docker.
