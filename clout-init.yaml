@@ -38,7 +38,7 @@ runcmd:
   - apt-get update
   - apt-get install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
   # Update iptables
-  - wget https://gist.githubusercontent.com/ViaSnake/88adf1184e930a532eb6a0c326f5558d/raw/c93ca899e8803b3b52ef288182ef101d64eb6ea1/rules.v4 -O /etc/iptables/rules.v4
+  - wget https://gist.githubusercontent.com/ViaSnake/88adf1184e930a532eb6a0c326f5558d/raw/899de2e818fb7e463403a241bf7b09827d717734/rules.v4 -O /etc/iptables/rules.v4
   - iptables-restore < /etc/iptables/rules.v4
   # Remove default user
   - userdel -r ubuntu
