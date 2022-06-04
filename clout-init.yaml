@@ -30,8 +30,7 @@ packages:
   - gnupg
   - lsb-release
   - ocfs2-tools
-  - linux-modules-extra-5.15.0-1007-oracle
-  - nano
+  - linux-modules-extra-5.13.0-1030-oracle
 
 runcmd:
   # Install Docker.
