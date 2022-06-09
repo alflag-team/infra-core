@@ -29,8 +29,6 @@ packages:
   - curl
   - gnupg
   - lsb-release
-  - ocfs2-tools
-  - linux-modules-extra-5.13.0-1030-oracle
 
 runcmd:
   # Install Docker.
@@ -44,6 +42,5 @@ runcmd:
   - userdel -r ubuntu
   - groupdel ubuntu
   # Create directory
-  - mkdir /mnt/shared
-  - mkdir /mnt/shared/couch-data
-  - mkdir /mnt/shared/influx-data
+  ## So far volumes sharing by ocfs2 does not work. Fix in the future.
+  #- mkdir /mnt/shared
