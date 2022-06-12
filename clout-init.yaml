@@ -42,5 +42,4 @@ runcmd:
   - userdel -r ubuntu
   - groupdel ubuntu
   # Create directory
-  ## So far volumes sharing by ocfs2 does not work. Fix in the future.
-  #- mkdir /mnt/shared
+  - mkdir /mnt/shared
