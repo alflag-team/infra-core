@@ -35,7 +35,7 @@ runcmd:
   - curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
   - apt-get update
   - apt-get upgrade
-  - apt-get install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin ocfs2-tools linux-modules-extra-5.15.0-1021-oracle
+  - apt-get install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin ocfs2-tools linux-modules-extra-5.15.0-1025-oracle
   # Update iptables
   - wget https://gist.githubusercontent.com/viasnake/88adf1184e930a532eb6a0c326f5558d/raw/55732512bd044381e8d1cdd91039f68ea7ec2ae4/rules.v4 -O /etc/iptables/rules.v4
   - iptables-restore < /etc/iptables/rules.v4
