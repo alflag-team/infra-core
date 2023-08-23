@@ -7,31 +7,55 @@ variable "target_node" {
 }
 
 variable "clone" {
-  type = string
+  type    = string
   default = "ubuntu-server-22.04"
 }
 
 variable "memory" {
-  type = number
+  type    = number
   default = 1024
 }
 
 variable "os_type" {
-  type = string
+  type    = string
   default = "cloud-init"
 }
 
+variable "scsihw" {
+  type    = string
+  default = "virtio-scsi-pci"
+}
+
 variable "disk_type" {
-  type = string
+  type    = string
   default = "scsi"
 }
 
 variable "disk_storage" {
-  type = string
+  type    = string
   default = "hdd-01"
 }
 
 variable "disk_size" {
-  type = string
+  type    = string
   default = "16G"
+}
+
+variable "ciuser" {
+  type    = string
+  default = "ubuntu"
+}
+
+variable "cipassword" {
+  type    = string
+  default = "ubuntu"
+}
+
+variable "sshkeys" {
+  type    = string
+  default = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJdpqfqxJQBhiisSoRomP7bsvG3iqA7bsSmBkDYupUFK"
+}
+
+variable "ipconfig" {
+  type = string
 }
