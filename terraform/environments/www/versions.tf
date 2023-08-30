@@ -5,4 +5,12 @@ terraform {
       version = ">=2.9.0"
     }
   }
+  
+  cloud {
+    organization = "alflag"
+
+    workspaces {
+      name = "infra"
+    }
+  }
 }
