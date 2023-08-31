@@ -5,13 +5,15 @@ VMs are created using [QEMU](https://www.qemu.org/). QEMU is a generic and open 
 
 ## Requirements
 
-No requirements.
+| Name | Version |
+|------|---------|
+| <a name="requirement_proxmox"></a> [proxmox](#requirement\_proxmox) | >=2.9.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_proxmox"></a> [proxmox](#provider\_proxmox) | n/a |
+| <a name="provider_proxmox"></a> [proxmox](#provider\_proxmox) | >=2.9.0 |
 
 ## Modules
 
@@ -21,20 +23,26 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [proxmox_vm_qemu.main](https://registry.terraform.io/providers/hashicorp/proxmox/latest/docs/resources/vm_qemu) | resource |
+| [proxmox_vm_qemu.main](https://registry.terraform.io/providers/telmate/proxmox/latest/docs/resources/vm_qemu) | resource |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_cipassword"></a> [cipassword](#input\_cipassword) | n/a | `string` | `"ubuntu"` | no |
+| <a name="input_ciuser"></a> [ciuser](#input\_ciuser) | n/a | `string` | `"ubuntu"` | no |
 | <a name="input_clone"></a> [clone](#input\_clone) | n/a | `string` | `"ubuntu-server-22.04"` | no |
 | <a name="input_disk_size"></a> [disk\_size](#input\_disk\_size) | n/a | `string` | `"16G"` | no |
 | <a name="input_disk_storage"></a> [disk\_storage](#input\_disk\_storage) | n/a | `string` | `"hdd-01"` | no |
 | <a name="input_disk_type"></a> [disk\_type](#input\_disk\_type) | n/a | `string` | `"scsi"` | no |
+| <a name="input_ipconfig"></a> [ipconfig](#input\_ipconfig) | n/a | `string` | n/a | yes |
 | <a name="input_memory"></a> [memory](#input\_memory) | n/a | `number` | `1024` | no |
 | <a name="input_name"></a> [name](#input\_name) | n/a | `string` | n/a | yes |
 | <a name="input_os_type"></a> [os\_type](#input\_os\_type) | n/a | `string` | `"cloud-init"` | no |
+| <a name="input_scsihw"></a> [scsihw](#input\_scsihw) | n/a | `string` | `"virtio-scsi-pci"` | no |
+| <a name="input_sshkeys"></a> [sshkeys](#input\_sshkeys) | n/a | `string` | `"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJdpqfqxJQBhiisSoRomP7bsvG3iqA7bsSmBkDYupUFK"` | no |
 | <a name="input_target_node"></a> [target\_node](#input\_target\_node) | n/a | `string` | n/a | yes |
+| <a name="input_vmid"></a> [vmid](#input\_vmid) | n/a | `number` | n/a | yes |
 
 ## Outputs
 
@@ -48,4 +56,5 @@ No modules.
 | <a name="output_name"></a> [name](#output\_name) | VMの名前 |
 | <a name="output_os_type"></a> [os\_type](#output\_os\_type) | VMのOSタイプ |
 | <a name="output_target_node"></a> [target\_node](#output\_target\_node) | VMのノード名 |
+| <a name="output_vmid"></a> [vmid](#output\_vmid) | VMのID |
 <!-- END_TF_DOCS -->
