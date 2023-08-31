@@ -8,6 +8,11 @@ output "target_node" {
   value       = proxmox_vm_qemu.main.target_node
 }
 
+output "vmid" {
+  description = "VMのID"
+  value       = proxmox_vm_qemu.main.vmid
+}
+
 output "clone" {
   description = "VMのクローン元"
   value       = proxmox_vm_qemu.main.clone

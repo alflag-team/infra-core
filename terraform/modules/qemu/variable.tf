@@ -6,6 +6,10 @@ variable "target_node" {
   type = string
 }
 
+variable "vmid" {
+  type = number
+}
+
 variable "clone" {
   type    = string
   default = "ubuntu-server-22.04"

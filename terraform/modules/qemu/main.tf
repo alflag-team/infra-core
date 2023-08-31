@@ -1,6 +1,7 @@
 resource "proxmox_vm_qemu" "main" {
   name        = var.name
   target_node = var.target_node
+  vmid        = var.vmid
   clone       = var.clone
   memory      = var.memory
   os_type     = var.os_type
