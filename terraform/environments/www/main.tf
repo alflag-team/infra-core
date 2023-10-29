@@ -3,6 +3,7 @@ module "qemu" {
 
   name         = "test"
   target_node  = "kitsune"
+  vmid         = 0
   clone        = "ubuntu-server-22.04"
   memory       = 1024
   os_type      = "cloud-init"
