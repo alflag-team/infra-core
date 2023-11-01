@@ -55,11 +55,6 @@ variable "cipassword" {
   default = "ubuntu"
 }
 
-variable "sshkeys" {
-  type    = string
-  default = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJdpqfqxJQBhiisSoRomP7bsvG3iqA7bsSmBkDYupUFK"
-}
-
 variable "ipconfig" {
   type = string
 }

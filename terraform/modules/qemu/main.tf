@@ -15,8 +15,5 @@ resource "proxmox_vm_qemu" "main" {
 
   ciuser     = var.ciuser
   cipassword = var.cipassword
-  sshkeys    = <<EOF
-${var.sshkeys}
-EOF
   ipconfig0  = var.ipconfig
 }
