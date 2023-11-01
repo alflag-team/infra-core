@@ -1,0 +1,19 @@
+#cloud-config
+
+timezone: Asia/Tokyo
+
+groups:
+  - infra
+
+users:
+  - default
+
+system_info:
+  default_user:
+    name: infra
+    plain_text_passwd: 'infra'
+    home: /home/infra
+    shell: /bin/bash
+    lock_passwd: True
+    gecos: infra
+    groups: [infra, sudo]
