@@ -7,13 +7,11 @@ groups:
 
 users:
   - default
-
-system_info:
-  default_user:
-    name: infra
-    plain_text_passwd: 'infra'
-    home: /home/infra
+  - name: infra
+    groups: infra
+    plain_text_passwd: infra
     shell: /bin/bash
-    lock_passwd: True
-    gecos: infra
-    groups: [infra, sudo]
+    sudo: ["ALL=(ALL) NOPASSWD:ALL"]
+    lock_passwd: false
+
+ssh_pwauth: true
