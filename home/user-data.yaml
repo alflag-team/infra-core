@@ -2,16 +2,12 @@
 
 timezone: Asia/Tokyo
 
-groups:
-  - infra
-
 users:
-  - default
   - name: infra
-    groups: infra
+    gecos: infra
     plain_text_passwd: infra
+    lock_passwd: False
+    sudo: ALL=(ALL) NOPASSWD:ALL
     shell: /bin/bash
-    sudo: ["ALL=(ALL) NOPASSWD:ALL"]
-    lock_passwd: false
 
-ssh_pwauth: true
+ssh_pwauth: True
