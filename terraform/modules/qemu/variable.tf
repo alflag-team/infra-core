@@ -15,6 +15,16 @@ variable "clone" {
   default = "ubuntu-server-22.04"
 }
 
+variable "cores" {
+  type    = number
+  default = 1
+}
+
+variable "sockets" {
+  type    = number
+  default = 1
+}
+
 variable "memory" {
   type    = number
   default = 1024
@@ -45,16 +55,11 @@ variable "disk_size" {
   default = "16G"
 }
 
-variable "ciuser" {
+variable "cicustom" {
   type    = string
-  default = "ubuntu"
+  default = "user=local:snippets/user-data.yaml"
 }
 
-variable "cipassword" {
-  type    = string
-  default = "ubuntu"
-}
-
-variable "ipconfig" {
+variable "ipconfig0" {
   type = string
 }
