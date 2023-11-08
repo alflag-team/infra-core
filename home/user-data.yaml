@@ -10,18 +10,4 @@ users:
     sudo: ALL=(ALL) NOPASSWD:ALL
     shell: /bin/bash
 
-network:
-  version: 2
-  ethernets:
-    eth0:
-      addresses:
-        - 10.0.10.100/8
-      gateway4: 10.0.0.1
-      nameservers:
-        addresses:
-          - 8.8.8.8
-          - 1.1.1.1
-          - 8.4.4.8
-          - 1.0.0.1
-
 ssh_pwauth: True
