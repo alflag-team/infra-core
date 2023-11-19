@@ -1,6 +1,7 @@
 #cloud-config
 
 timezone: Asia/Tokyo
+locale: ja_JP.utf8
 
 users:
   - name: infra
