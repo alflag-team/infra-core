@@ -30,7 +30,17 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_hostname"></a> [hostname](#input\_hostname) | n/a | `string` | n/a | yes |
+| <a name="input_memory"></a> [memory](#input\_memory) | n/a | `number` | `512` | no |
+| <a name="input_network_bridge"></a> [network\_bridge](#input\_network\_bridge) | n/a | `string` | `"vmbr0"` | no |
+| <a name="input_network_gateway"></a> [network\_gateway](#input\_network\_gateway) | n/a | `string` | `"10.210.0.1"` | no |
+| <a name="input_network_ip"></a> [network\_ip](#input\_network\_ip) | n/a | `string` | n/a | yes |
+| <a name="input_network_name"></a> [network\_name](#input\_network\_name) | n/a | `string` | `"eth0"` | no |
+| <a name="input_ostemplate"></a> [ostemplate](#input\_ostemplate) | n/a | `string` | `"hdd-01:vztmpl/ubuntu-22.04-standard_22.04-1_amd64.tar.zst"` | no |
+| <a name="input_password"></a> [password](#input\_password) | n/a | `string` | n/a | yes |
+| <a name="input_rootfs_size"></a> [rootfs\_size](#input\_rootfs\_size) | n/a | `string` | `"32G"` | no |
+| <a name="input_rootfs_storage"></a> [rootfs\_storage](#input\_rootfs\_storage) | n/a | `string` | `"local-lvm"` | no |
 | <a name="input_target_node"></a> [target\_node](#input\_target\_node) | n/a | `string` | n/a | yes |
+| <a name="input_unprivileged"></a> [unprivileged](#input\_unprivileged) | n/a | `bool` | `true` | no |
 
 ## Outputs
 
