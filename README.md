@@ -14,6 +14,7 @@
 ```shell
 export PM_API_TOKEN_ID=""
 export PM_API_TOKEN_SECRET=""
+export ROOT_PASSWORD=""
 ```
 
 その後、`terraform` ディレクトリに移動して、 `terraform` を実行します。

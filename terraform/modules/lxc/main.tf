@@ -3,6 +3,7 @@ resource "proxmox_lxc" "main" {
   hostname     = var.hostname
   ostemplate   = var.ostemplate
   password     = var.password
+  memory       = var.memory
   unprivileged = var.unprivileged
 
   rootfs {
