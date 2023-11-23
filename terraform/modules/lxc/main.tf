@@ -5,6 +5,7 @@ resource "proxmox_lxc" "main" {
   password     = var.password
   memory       = var.memory
   unprivileged = var.unprivileged
+  onboot       = var.onboot
 
   rootfs {
     storage = var.rootfs_storage

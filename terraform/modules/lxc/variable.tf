@@ -10,6 +10,11 @@ variable "password" {
   type = string
 }
 
+variable "onboot" {
+  type    = bool
+  default = true
+}
+
 variable "memory" {
   type    = number
   default = 512
