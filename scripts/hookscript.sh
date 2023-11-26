@@ -51,10 +51,14 @@ post_start_actions() {
   # Check if the user already exists
   if ! user_exists "$USER_NAME"; then
     lxc-attach -n "$CONTAINER_ID" -- useradd -m -u "$USER_UID" -g "$GROUP_NAME" -G sudo -s "$USER_SHELL" "$USER_NAME"
-    lxc-attach -n "$CONTAINER_ID" -- echo "${USER_NAME}:${PASSWORD}" | chpasswd
+    echo "${USER_NAME}:${PASSWORD}" | lxc-attach -n "$CONTAINER_ID" -- chpasswd
   else
     log "User $USER_NAME already exists. Skipping user creation."
   fi
+
+  # Enable SSH password authentication
+  lxc-attach -n "$CONTAINER_ID" -- sed -i '/PasswordAuthentication/s/^#//; /PasswordAuthentication/s/no/yes/' /etc/ssh/sshd_config
+  lxc-attach -n "$CONTAINER_ID" -- systemctl reload ssh
 }
 
 # Function for pre-stop actions
