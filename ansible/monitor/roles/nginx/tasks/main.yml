@@ -1,0 +1,17 @@
+---
+- name: Install Nginx
+  apt:
+    name:
+      - nginx
+    state: present
+
+- name: Copy Zabbix Nginx Config
+  template:
+    src: zabbix.conf
+    dest: /etc/nginx/conf.d/zabbix.conf
+
+- name: Enable Nginx
+  systemd:
+    name: nginx
+    enabled: yes
+    state: started
