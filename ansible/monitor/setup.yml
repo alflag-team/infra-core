@@ -1,0 +1,11 @@
+---
+- name: Install Zabbix Server and Agent
+  hosts: all
+  become: yes
+
+  roles:
+    - common
+    - nginx
+    - php-fpm
+    - zabbix-server
+    - zabbix-agent
