@@ -16,6 +16,10 @@ GROUP_GID=1000
 USER_SHELL="/bin/bash"
 PASSWORD="password"
 
+# SSH configuration
+SSH_PATH="/etc/ssh/sshd_config"
+SSH_CONFIG="Match Address 10.210.*.*\n\tPasswordAuthentication yes"
+
 # Debug log function
 log() {
   echo "[$(date '+%Y-%m-%d %H:%M:%S')] [${PHASE}] $1"
@@ -29,6 +33,11 @@ user_exists() {
 # Function to check if a group exists
 group_exists() {
   lxc-attach -n "$CONTAINER_ID" -- getent group "$1" &>/dev/null
+}
+
+# Function to check if a configuration exists in a file
+config_exists() {
+  lxc-attach -n "$CONTAINER_ID" -- grep -qF "$1" "$2"
 }
 
 # Function for pre-start actions
@@ -56,9 +65,13 @@ post_start_actions() {
     log "User $USER_NAME already exists. Skipping user creation."
   fi
 
-  # Enable SSH password authentication
-  lxc-attach -n "$CONTAINER_ID" -- sed -i '/PasswordAuthentication/s/^#//; /PasswordAuthentication/s/no/yes/' /etc/ssh/sshd_config
-  lxc-attach -n "$CONTAINER_ID" -- systemctl reload ssh
+  # Check if the SSH configuration already exists
+  if ! config_exists "$SSH_CONFIG" "$SSH_PATH"; then
+    lxc-attach -n "$CONTAINER_ID" -- bash -c "echo -e '$SSH_CONFIG' >> $SSH_PATH"
+    log "Appended configuration to $SSH_PATH."
+  else
+    log "Configuration already exists in $SSH_PATH. Skipping."
+  fi
 }
 
 # Function for pre-stop actions
