@@ -15,6 +15,11 @@ variable "onboot" {
   default = true
 }
 
+variable "hookscript" {
+  type    = string
+  default = "local:snippets/hookscript.sh"
+}
+
 variable "memory" {
   type    = number
   default = 512
