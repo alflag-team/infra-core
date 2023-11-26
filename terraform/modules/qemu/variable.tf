@@ -8,6 +8,7 @@ variable "target_node" {
 
 variable "vmid" {
   type = number
+  default = 0
 }
 
 variable "clone" {
