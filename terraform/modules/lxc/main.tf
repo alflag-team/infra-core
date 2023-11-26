@@ -6,6 +6,7 @@ resource "proxmox_lxc" "main" {
   memory       = var.memory
   unprivileged = var.unprivileged
   onboot       = var.onboot
+  hookscript   = var.hookscript
 
   rootfs {
     storage = var.rootfs_storage
