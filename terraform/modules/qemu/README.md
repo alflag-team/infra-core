@@ -29,20 +29,20 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_cipassword"></a> [cipassword](#input\_cipassword) | n/a | `string` | `"ubuntu"` | no |
-| <a name="input_ciuser"></a> [ciuser](#input\_ciuser) | n/a | `string` | `"ubuntu"` | no |
+| <a name="input_cicustom"></a> [cicustom](#input\_cicustom) | n/a | `string` | `"user=local:snippets/user-data.yaml"` | no |
 | <a name="input_clone"></a> [clone](#input\_clone) | n/a | `string` | `"ubuntu-server-22.04"` | no |
+| <a name="input_cores"></a> [cores](#input\_cores) | n/a | `number` | `1` | no |
 | <a name="input_disk_size"></a> [disk\_size](#input\_disk\_size) | n/a | `string` | `"16G"` | no |
 | <a name="input_disk_storage"></a> [disk\_storage](#input\_disk\_storage) | n/a | `string` | `"hdd-01"` | no |
 | <a name="input_disk_type"></a> [disk\_type](#input\_disk\_type) | n/a | `string` | `"scsi"` | no |
-| <a name="input_ipconfig"></a> [ipconfig](#input\_ipconfig) | n/a | `string` | n/a | yes |
+| <a name="input_ipconfig0"></a> [ipconfig0](#input\_ipconfig0) | n/a | `string` | n/a | yes |
 | <a name="input_memory"></a> [memory](#input\_memory) | n/a | `number` | `1024` | no |
 | <a name="input_name"></a> [name](#input\_name) | n/a | `string` | n/a | yes |
 | <a name="input_os_type"></a> [os\_type](#input\_os\_type) | n/a | `string` | `"cloud-init"` | no |
 | <a name="input_scsihw"></a> [scsihw](#input\_scsihw) | n/a | `string` | `"virtio-scsi-pci"` | no |
-| <a name="input_sshkeys"></a> [sshkeys](#input\_sshkeys) | n/a | `string` | `"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJdpqfqxJQBhiisSoRomP7bsvG3iqA7bsSmBkDYupUFK"` | no |
+| <a name="input_sockets"></a> [sockets](#input\_sockets) | n/a | `number` | `1` | no |
 | <a name="input_target_node"></a> [target\_node](#input\_target\_node) | n/a | `string` | n/a | yes |
-| <a name="input_vmid"></a> [vmid](#input\_vmid) | n/a | `number` | n/a | yes |
+| <a name="input_vmid"></a> [vmid](#input\_vmid) | n/a | `number` | `0` | no |
 
 ## Outputs
 
