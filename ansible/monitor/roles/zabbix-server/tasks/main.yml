@@ -18,6 +18,14 @@
       - zabbix-frontend-php
     state: present
 
+- name: Copy Zabbix Server Configuration
+  template:
+    src: zabbix_server.conf
+    dest: /etc/zabbix/zabbix_server.conf
+    owner: root
+    group: root
+    mode: 0644
+
 - name: Enable Zabbix Server
   systemd:
     name: zabbix-server
