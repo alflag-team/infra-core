@@ -17,6 +17,14 @@
       - zabbix-agent
     state: present
 
+- name: Copy Zabbix Agent Configuration
+  template:
+    src: zabbix_agentd.conf
+    dest: /etc/zabbix/zabbix_agentd.conf
+    owner: root
+    group: root
+    mode: 0644
+
 - name: Enable Zabbix Agent
   systemd:
     name: zabbix-agent
