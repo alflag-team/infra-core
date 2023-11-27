@@ -1,1 +1,1 @@
-variable "password" {}
+variable "root_password" {}
