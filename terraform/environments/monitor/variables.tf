@@ -1,4 +1,4 @@
-variable "proxmox_api_url" {
+variable "password" {
   type    = string
-  default = "http://10.210.1.1:8006/api2/json"
+  default = "password"
 }
