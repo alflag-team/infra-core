@@ -1,6 +1,6 @@
 ---
-- name: Install Zabbix Server and Agent
-  hosts: all
+- name: Setup monitor
+  hosts: monitor
   become: yes
 
   roles:
@@ -8,4 +8,3 @@
     - nginx
     - php-fpm
     - zabbix-server
-    - zabbix-agent

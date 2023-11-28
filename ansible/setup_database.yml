@@ -1,0 +1,9 @@
+---
+- name: Setup database
+  hosts: database
+  become: yes
+
+  roles:
+    - common
+    - mysql
+    - zabbix-agent
