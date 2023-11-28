@@ -4,6 +4,7 @@
     name:
       - mysql-server-8.0
       - mysql-client-8.0
+      - python3-pymysql
     state: present
 
 - name: Set MySQL Root Password
@@ -12,6 +13,7 @@
     login_password: "{{ mysql_root_password }}"
     name: "root"
     password: "{{ mysql_root_password }}"
+    login_unix_socket: "/var/run/mysqld/mysqld.sock"
     check_implicit_admin: yes
     state: present
 
@@ -42,4 +44,4 @@
   service:
     name: mysql
     enabled: yes
-    state: started
+    state: restarted
