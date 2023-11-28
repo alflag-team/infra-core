@@ -2,11 +2,13 @@ variable "root_password" {
   type      = string
   sensitive = true
 }
-variable "pm_user" {
+
+variable "proxmox_user" {
   type      = string
   sensitive = true
 }
-variable "pm_password" {
+
+variable "proxmox_password" {
   type      = string
   sensitive = true
 }
