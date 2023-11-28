@@ -1,0 +1,45 @@
+---
+- name: Install MySQL Server
+  apt:
+    name:
+      - mysql-server-8.0
+      - mysql-client-8.0
+    state: present
+
+- name: Set MySQL Root Password
+  mysql_user:
+    login_user: "root"
+    login_password: "{{ mysql_root_password }}"
+    name: "root"
+    password: "{{ mysql_root_password }}"
+    check_implicit_admin: yes
+    state: present
+
+- name: Remove anonymous users
+  mysql_user:
+    login_user: "root"
+    login_password: "{{ mysql_root_password }}"
+    name: ""
+    state: absent
+
+- name: Create Zabbix Database
+  mysql_db:
+    login_user: "root"
+    login_password: "{{ mysql_root_password }}"
+    name: "{{ mysql_zabbix_name }}"
+    state: present
+
+- name: Create Zabbix User
+  mysql_user:
+    login_user: "root"
+    login_password: "{{ mysql_root_password }}"
+    name: "{{ mysql_zabbix_user }}"
+    password: "{{ mysql_zabbix_password }}"
+    priv: "zabbix.*:ALL"
+    state: present
+
+- name: Enable MySQL Service
+  service:
+    name: mysql
+    enabled: yes
+    state: started
