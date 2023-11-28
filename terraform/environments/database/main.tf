@@ -1,16 +1,9 @@
-module "qemu" {
-  source = "../../modules/qemu"
+module "lxc" {
+  source = "../../modules/lxc"
 
-  name         = "database1001"
-  target_node  = "kitsune"
-  vmid         = 0
-  clone        = "ubuntu-server-22.04"
-  cores        = 2
-  sockets      = 1
-  memory       = 2048
-  os_type      = "cloud-init"
-  disk_type    = "scsi"
-  disk_storage = "hdd-01"
-  disk_size    = "32G"
-  ipconfig0    = "ip=10.210.4.3/24,gw=10.210.0.1"
+  hostname      = "database1001"
+  target_node   = "kitsune"
+  memory        = 2048
+  network_ip    = "10.210.4.2/24"
+  root_password = var.root_password
 }
