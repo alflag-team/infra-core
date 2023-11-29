@@ -3,3 +3,7 @@
   locale_gen:
     name: ja_JP.UTF-8
     state: present
+
+- name: Set hostname
+  hostname:
+    name: "{{ inventory_hostname }}"
