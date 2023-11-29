@@ -20,6 +20,11 @@ variable "hookscript" {
   default = "local:snippets/hookscript.sh"
 }
 
+variable "start" {
+  type    = bool
+  default = true
+}
+
 variable "memory" {
   type    = number
   default = 512
