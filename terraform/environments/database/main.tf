@@ -1,7 +1,7 @@
 module "qemu" {
   source = "../../modules/qemu"
 
-  name         = "database1001"
+  name         = "database1003"
   target_node  = "kitsune"
   vmid         = 0
   clone        = "ubuntu-server-22.04"
