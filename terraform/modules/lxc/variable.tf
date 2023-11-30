@@ -7,7 +7,8 @@ variable "target_node" {
 }
 
 variable "root_password" {
-  type = string
+  type    = string
+  default = "password"
 }
 
 variable "onboot" {
