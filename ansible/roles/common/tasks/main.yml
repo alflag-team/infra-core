@@ -11,3 +11,21 @@
 - name: Set timezone
   timezone:
     name: Asia/Tokyo
+
+- name: Create infra group
+  group:
+    name: "infra"
+    gid: 1000
+    state: present
+
+- name: Create infra user
+  user:
+    name: "{{ user_infra_name }}"
+    uid: 1000
+    password: "{{ user_infra_password }}"
+    update_password: always
+    groups: infra,sudo
+    shell: /bin/bash
+    create_home: yes
+    home: /home/infra
+    state: present
