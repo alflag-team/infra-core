@@ -1,14 +1,14 @@
 #cloud-config
 
-timezone: Asia/Tokyo
-locale: ja_JP.utf8
+groups:
+  - ansible
 
 users:
-  - name: infra
-    gecos: infra
-    plain_text_passwd: infra
+  - name: ansible
+    gecos: ansible
+    plain_text_passwd: ansible
     lock_passwd: False
-    sudo: ALL=(ALL) NOPASSWD:ALL
+    groups: ansible,sudo
     shell: /bin/bash
 
 ssh_pwauth: True
