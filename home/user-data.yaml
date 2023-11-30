@@ -7,5 +7,6 @@ users:
     lock_passwd: False
     groups: sudo
     shell: /bin/bash
+    uid: 1500
 
 ssh_pwauth: True
