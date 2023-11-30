@@ -1,14 +1,11 @@
 #cloud-config
 
-groups:
-  - ansible
-
 users:
   - name: ansible
     gecos: ansible
     plain_text_passwd: ansible
     lock_passwd: False
-    groups: ansible,sudo
+    groups: sudo
     shell: /bin/bash
 
 ssh_pwauth: True
