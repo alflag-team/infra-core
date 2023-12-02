@@ -38,6 +38,8 @@
     owner: root
     group: root
     mode: 0644
+  notify:
+    - restart sshd
 
 - name: Copy sshd_config.d/99-password-auth
   template:
@@ -46,6 +48,8 @@
     owner: root
     group: root
     mode: 0644
+  notify:
+    - restart sshd
 
 - name: apt update
   apt:
