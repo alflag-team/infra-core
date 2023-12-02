@@ -1,8 +1,8 @@
 # Terraform
 
-インフラを管理しているTerraformのコードが管理されています。
+インフラを管理している Terraform のコードが管理されています。
 
-[Google Cloudのベストプラクティスガイド](https://cloud.google.com/docs/terraform/best-practices-for-terraform)に従って管理しています。
+* [Google Cloud のベストプラクティスガイド](https://cloud.google.com/docs/terraform/best-practices-for-terraform)
 
 ## ディレクトリ構成
 
@@ -28,7 +28,7 @@
 
 ## terraform ドキュメントの生成
 
-terraform-docsを使ってドキュメントを生成しています。
+terraform-docs を使ってドキュメントを生成しています。
 
 モジュールを作る場合、以下のファイルを作成する必要があります。
 

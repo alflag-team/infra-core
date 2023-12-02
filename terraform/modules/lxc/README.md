@@ -38,9 +38,10 @@ No modules.
 | <a name="input_network_name"></a> [network\_name](#input\_network\_name) | n/a | `string` | `"eth0"` | no |
 | <a name="input_onboot"></a> [onboot](#input\_onboot) | n/a | `bool` | `true` | no |
 | <a name="input_ostemplate"></a> [ostemplate](#input\_ostemplate) | n/a | `string` | `"hdd-01:vztmpl/ubuntu-22.04-standard_22.04-1_amd64.tar.zst"` | no |
-| <a name="input_root_password"></a> [root\_password](#input\_root\_password) | n/a | `string` | n/a | yes |
+| <a name="input_root_password"></a> [root\_password](#input\_root\_password) | n/a | `string` | `"password"` | no |
 | <a name="input_rootfs_size"></a> [rootfs\_size](#input\_rootfs\_size) | n/a | `string` | `"32G"` | no |
 | <a name="input_rootfs_storage"></a> [rootfs\_storage](#input\_rootfs\_storage) | n/a | `string` | `"local-lvm"` | no |
+| <a name="input_start"></a> [start](#input\_start) | n/a | `bool` | `true` | no |
 | <a name="input_target_node"></a> [target\_node](#input\_target\_node) | n/a | `string` | n/a | yes |
 | <a name="input_unprivileged"></a> [unprivileged](#input\_unprivileged) | n/a | `bool` | `true` | no |
 
