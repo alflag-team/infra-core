@@ -9,6 +9,7 @@
   template:
     src: zabbix.conf
     dest: /etc/nginx/conf.d/zabbix.conf
+  notify: restart nginx
 
 - name: Enable Nginx
   systemd:
