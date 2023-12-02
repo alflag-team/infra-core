@@ -9,6 +9,16 @@ users:
     shell: /bin/bash
     uid: 1500
 
+write_files:
+  - path: /etc/ssh/sshd_config
+    content: |
+
+      # Allow password authentication from internal network
+      Match Address 10.210.*.*
+        PasswordAuthentication yes
+      Match Address 192.168.100.*
+        PasswordAuthentication yes
+    append: true
+
 runcmd:
-  - echo 'Match Address 10.210.*.*\n\tPasswordAuthentication yes' >> /etc/ssh/sshd_config.d/99-allow-intarnal-password-auth.conf
   - systemctl restart sshd
