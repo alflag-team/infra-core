@@ -9,5 +9,5 @@ user_infra_salt: "{{ vault_user_infra_salt }}"
 
 mysql_root_password: "{{ vault_mysql_root_password }}"
 mysql_zabbix_dbname: "{{ vault_mysql_zabbix_dbname}}"
-mysql_zabbix_user: "{{ vault_mysql_zabbix_user }}}}"
+mysql_zabbix_user: "{{ vault_mysql_zabbix_user }}"
 mysql_zabbix_password: "{{ vault_mysql_zabbix_password }}"
