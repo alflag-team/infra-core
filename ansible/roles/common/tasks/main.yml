@@ -22,7 +22,7 @@
   user:
     name: "{{ user_infra_name }}"
     uid: 1000
-    password: "{{ user_infra_password }}"
+    password: "{{ user_infra_password | password_hash( 'sha512', user_infra_salt ) }}"
     update_password: always
     groups: infra,sudo
     shell: /bin/bash
