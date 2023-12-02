@@ -5,6 +5,14 @@
       - php8.1-fpm
     state: present
 
+- name: Copy www.conf
+  template:
+    src: www.conf
+    dest: /etc/php/8.1/fpm/www.conf
+    owner: root
+    group: root
+    mode: 0644
+
 - name: Enable php-fpm
   systemd:
     name: php8.1-fpm
