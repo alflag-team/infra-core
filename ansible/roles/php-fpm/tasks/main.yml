@@ -12,6 +12,7 @@
     owner: root
     group: root
     mode: 0644
+  notify: restart php8.1-fpm
 
 - name: Enable php-fpm
   systemd:
