@@ -16,6 +16,7 @@
     name:
       - zabbix-server-mysql
       - zabbix-frontend-php
+      - fonts-ipafont-gothic
     state: present
 
 - name: Copy Zabbix Server Configuration
@@ -25,6 +26,18 @@
     owner: root
     group: root
     mode: 0644
+
+- name: Create Symbolic Link
+  file:
+    src: /usr/share/fonts/opentype/ipafont-gothic/ipag.ttf
+    dest: /usr/share/zabbix/assets/fonts/ipag.ttf
+    state: link
+
+- name: Replace ZBX_GRAPH_FONT_NAME
+  lineinfile:
+    path: /usr/share/zabbix/include/defines.inc.php
+    regexp: "^define\\('ZBX_GRAPH_FONT_NAME',.*$"
+    line: "define('ZBX_GRAPH_FONT_NAME', 'ipag');"
 
 - name: Enable Zabbix Server
   systemd:
