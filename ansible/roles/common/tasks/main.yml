@@ -29,3 +29,7 @@
     create_home: yes
     home: /home/infra
     state: present
+
+- name: apt update
+  apt:
+    update_cache: yes
