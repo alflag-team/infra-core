@@ -9,4 +9,6 @@ users:
     shell: /bin/bash
     uid: 1500
 
-ssh_pwauth: True
+runcmd:
+  - echo 'Match Address 10.210.*.*\n\tPasswordAuthentication yes' >> /etc/ssh/sshd_config.d/99-allow-intarnal-password-auth.conf
+  - systemctl restart sshd
