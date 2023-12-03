@@ -7,6 +7,7 @@ user_infra_name: "{{ vault_user_infra }}"
 user_infra_password: "{{ vault_user_infra_password }}"
 user_infra_salt: "{{ vault_user_infra_salt }}"
 
+mysql_login_unix_socket: "/var/run/mysqld/mysqld.sock"
 mysql_root_password: "{{ vault_mysql_root_password }}"
 mysql_zabbix_dbname: "{{ vault_mysql_zabbix_dbname}}"
 mysql_zabbix_user: "{{ vault_mysql_zabbix_user }}"

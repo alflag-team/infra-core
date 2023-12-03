@@ -12,7 +12,7 @@
   mysql_user:
     login_user: "root"
     login_password: "{{ mysql_root_password }}"
-    login_unix_socket: "/var/run/mysqld/mysqld.sock"
+    login_unix_socket: "{{ mysql_login_unix_socket }}"
     name: "root"
     password: "{{ mysql_root_password }}"
     check_implicit_admin: yes
@@ -22,7 +22,7 @@
   mysql_user:
     login_user: "root"
     login_password: "{{ mysql_root_password }}"
-    login_unix_socket: "/var/run/mysqld/mysqld.sock"
+    login_unix_socket: "{{ mysql_login_unix_socket }}"
     name: ""
     state: absent
 
@@ -30,7 +30,7 @@
   mysql_db:
     login_user: "root"
     login_password: "{{ mysql_root_password }}"
-    login_unix_socket: "/var/run/mysqld/mysqld.sock"
+    login_unix_socket: "{{ mysql_login_unix_socket }}"
     name: "{{ mysql_zabbix_dbname }}"
     state: present
 
@@ -38,7 +38,7 @@
   mysql_user:
     login_user: "root"
     login_password: "{{ mysql_root_password }}"
-    login_unix_socket: "/var/run/mysqld/mysqld.sock"
+    login_unix_socket: "{{ mysql_login_unix_socket }}"
     name: "{{ mysql_zabbix_user }}"
     password: "{{ mysql_zabbix_password }}"
     host: "10.210.2.%"
@@ -49,7 +49,7 @@
   mysql_user:
     login_user: "root"
     login_password: "{{ mysql_root_password }}"
-    login_unix_socket: "/var/run/mysqld/mysqld.sock"
+    login_unix_socket: "{{ mysql_login_unix_socket }}"
     name: "{{ mysql_zabbix_monitor_user }}"
     password: "{{ mysql_zabbix_monitor_password }}"
     host: "127.0.0.1"
