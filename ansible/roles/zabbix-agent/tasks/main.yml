@@ -14,7 +14,8 @@
 - name: Install Zabbix Agent
   apt:
     name:
-      - zabbix-agent
+      - zabbix-agent2
+      - zabbix-agent2-plugin-*
     state: present
 
 - name: Copy Zabbix Agent Configuration
@@ -44,6 +45,6 @@
 
 - name: Enable Zabbix Agent
   systemd:
-    name: zabbix-agent
+    name: zabbix-agent2
     enabled: yes
     state: started
