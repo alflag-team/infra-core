@@ -26,6 +26,22 @@
     mode: 0644
   notify: restart zabbix-agent
 
+- name: Create /var/lib/zabbix directory
+  file:
+    path: /var/lib/zabbix
+    state: directory
+    owner: root
+    group: root
+    mode: 0755
+
+- name: Copy .my.cnf
+  template:
+    src: .my.cnf
+    dest: /var/lib/zabbix/.my.cnf
+    owner: root
+    group: root
+    mode: 0600
+
 - name: Enable Zabbix Agent
   systemd:
     name: zabbix-agent
