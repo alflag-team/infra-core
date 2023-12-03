@@ -45,6 +45,17 @@
     priv: "zabbix.*:ALL"
     state: present
 
+- name: Create zabbix_monitor User
+  mysql_user:
+    login_user: "root"
+    login_password: "{{ mysql_root_password }}"
+    login_unix_socket: "/var/run/mysqld/mysqld.sock"
+    name: "{{ mysql_zabbix_monitor_user }}"
+    password: "{{ mysql_zabbix_monitor_password }}"
+    host: "127.0.0.1"
+    priv: "*.*:REPLICATION CLIENT,PROCESS,SHOW DATABASES,SHOW VIEW"
+    state: present
+
 - name: Copy mysqld.cnf
   template:
     src: mysqld.cnf
