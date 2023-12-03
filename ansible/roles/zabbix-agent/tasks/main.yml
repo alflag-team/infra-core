@@ -20,7 +20,7 @@
 
 - name: Copy Zabbix Agent Configuration
   template:
-    src: zabbix_agentd.conf
+    src: zabbix_agent2.conf
     dest: /etc/zabbix/zabbix_agent2.conf
     owner: root
     group: root
@@ -41,7 +41,15 @@
     dest: /var/lib/zabbix/.my.cnf
     owner: root
     group: root
-    mode: 0600
+    mode: 0644
+
+- name: Copy mysql.conf
+  template:
+    src: plugins.d/mysql.conf
+    dest: /etc/zabbix/zabbix_agent2.d/plugins.d/mysql.conf
+    owner: root
+    group: root
+    mode: 0644
 
 - name: Enable Zabbix Agent
   systemd:

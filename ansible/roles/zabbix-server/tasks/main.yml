@@ -54,7 +54,7 @@
 
 - name: Copy Zabbix Agent Configuration
   template:
-    src: zabbix_agentd.conf
+    src: zabbix_agent2.conf
     dest: /etc/zabbix/zabbix_agent2.conf
     owner: root
     group: root
