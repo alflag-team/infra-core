@@ -35,14 +35,6 @@
     group: root
     mode: 0755
 
-- name: Copy .my.cnf
-  template:
-    src: .my.cnf
-    dest: /var/lib/zabbix/.my.cnf
-    owner: root
-    group: root
-    mode: 0644
-
 - name: Copy mysql.conf
   template:
     src: plugins.d/mysql.conf
