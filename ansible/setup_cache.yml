@@ -1,0 +1,9 @@
+---
+- name: Setup cache
+  hosts: cache
+  become: yes
+
+  roles:
+    - common
+    - redis-server
+    - zabbix-agent
