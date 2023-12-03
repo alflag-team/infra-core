@@ -24,6 +24,7 @@
     owner: root
     group: root
     mode: 0644
+  notify: restart zabbix-agent
 
 - name: Enable Zabbix Agent
   systemd:
