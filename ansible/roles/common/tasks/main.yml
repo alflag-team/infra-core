@@ -31,26 +31,6 @@
     home: /home/infra
     state: present
 
-- name: Copy sshd_config
-  template:
-    src: sshd_config
-    dest: /etc/ssh/sshd_config
-    owner: root
-    group: root
-    mode: 0644
-  notify:
-    - restart sshd
-
-- name: Copy sshd_config.d/99-password-auth
-  template:
-    src: sshd_config.d/99-password-auth
-    dest: /etc/ssh/sshd_config.d/99-password-auth
-    owner: root
-    group: root
-    mode: 0644
-  notify:
-    - restart sshd
-
 - name: apt update
   apt:
     update_cache: yes

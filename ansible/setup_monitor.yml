@@ -5,6 +5,7 @@
 
   roles:
     - common
+    - sshd
     - nginx
     - php-fpm
     - zabbix-server
