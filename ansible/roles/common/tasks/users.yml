@@ -17,3 +17,24 @@
     create_home: yes
     home: /home/infra
     state: present
+
+- name: Create minecraft group
+  group:
+    name: "{{ user_minecraft_name }}"
+    gid: 1000
+    state: present
+  when: inventory_hostname == 'minecraft'
+
+- name: Create minecraft user
+  user:
+    name: "{{ user_minecraft_name }}"
+    uid: 1000
+    password: "{{ user_minecraft_password | password_hash( 'sha512', user_minecraft_salt ) }}"
+    update_password: always
+    group: minecraft
+    groups: sudo
+    shell: /bin/bash
+    create_home: yes
+    home: /home/minecraft
+    state: present
+  when: inventory_hostname == 'minecraft'
