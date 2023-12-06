@@ -12,24 +12,8 @@
   timezone:
     name: Asia/Tokyo
 
-- name: Create infra group
-  group:
-    name: "infra"
-    gid: 1000
-    state: present
-
-- name: Create infra user
-  user:
-    name: "{{ user_infra_name }}"
-    uid: 1000
-    password: "{{ user_infra_password | password_hash( 'sha512', user_infra_salt ) }}"
-    update_password: always
-    group: infra
-    groups: sudo
-    shell: /bin/bash
-    create_home: yes
-    home: /home/infra
-    state: present
+- name: Create users
+  include_tasks: users.yml
 
 - name: apt update
   apt:
