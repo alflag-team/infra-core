@@ -4,6 +4,7 @@
     name: "{{ user_infra_name }}"
     gid: 1000
     state: present
+  become: yes
 
 - name: Create infra user
   user:
@@ -17,12 +18,14 @@
     create_home: yes
     home: /home/infra
     state: present
+  become: yes
 
 - name: Create minecraft group
   group:
     name: "{{ user_minecraft_name }}"
     gid: 1000
     state: present
+  become: yes
   when: inventory_hostname == 'minecraft'
 
 - name: Create minecraft user
@@ -37,4 +40,5 @@
     create_home: yes
     home: /home/minecraft
     state: present
+  become: yes
   when: inventory_hostname == 'minecraft'

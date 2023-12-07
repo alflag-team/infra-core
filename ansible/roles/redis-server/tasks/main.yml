@@ -2,12 +2,14 @@
 - name: Update apt cache
   apt:
     update_cache: yes
+  become: yes
 
 - name: Install redis-server
   apt:
     name:
       - redis-server
     state: present
+  become: yes
 
 - name: Copy redis.conf
   template:
@@ -16,6 +18,7 @@
     owner: redis
     group: redis
     mode: 0644
+  become: yes
   notify: restart redis-server
 
 - name: Enable redis-server
@@ -23,3 +26,4 @@
     name: redis-server
     state: started
     enabled: yes
+  become: yes

@@ -1,7 +1,6 @@
 ---
 - name: Setup monitor
   hosts: monitor
-  become: yes
 
   roles:
     - common

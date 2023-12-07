@@ -4,3 +4,4 @@
     name: php8.1-fpm
     state: restarted
     enabled: yes
+  become: yes

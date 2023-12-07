@@ -4,3 +4,4 @@
     name: mysql
     state: restarted
     enabled: yes
+  become: yes

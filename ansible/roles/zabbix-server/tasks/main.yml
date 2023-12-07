@@ -3,13 +3,16 @@
   get_url:
     url: https://repo.zabbix.com/zabbix/6.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_6.0-4+ubuntu22.04_all.deb
     dest: /tmp/zabbix-release_6.0-4+ubuntu22.04_all.deb
+  become: yes
 
 - name: Install Zabbix Package
   shell: dpkg -i /tmp/zabbix-release_6.0-4+ubuntu22.04_all.deb
+  become: yes
 
 - name: Update apt
   apt:
     update_cache: yes
+  become: yes
 
 - name: Install Zabbix Server
   apt:
@@ -18,6 +21,7 @@
       - zabbix-frontend-php
       - fonts-ipafont-gothic
     state: present
+  become: yes
 
 - name: Copy Zabbix Server Configuration
   template:
@@ -26,24 +30,28 @@
     owner: root
     group: root
     mode: 0644
+  become: yes
 
 - name: Create Symbolic Link
   file:
     src: /usr/share/fonts/opentype/ipafont-gothic/ipag.ttf
     dest: /usr/share/zabbix/assets/fonts/ipag.ttf
     state: link
+  become: yes
 
 - name: Replace ZBX_GRAPH_FONT_NAME
   lineinfile:
     path: /usr/share/zabbix/include/defines.inc.php
     regexp: "^define\\('ZBX_GRAPH_FONT_NAME',.*$"
     line: "define('ZBX_GRAPH_FONT_NAME', 'ipag');"
+  become: yes
 
 - name: Enable Zabbix Server
   systemd:
     name: zabbix-server
     enabled: yes
     state: started
+  become: yes
 
 - name: Install Zabbix Agent
   apt:
@@ -51,6 +59,7 @@
       - zabbix-agent2
       - zabbix-agent2-plugin-*
     state: present
+  become: yes
 
 - name: Copy Zabbix Agent Configuration
   template:
@@ -59,9 +68,11 @@
     owner: root
     group: root
     mode: 0644
+  become: yes
 
 - name: Enable Zabbix Agent
   systemd:
     name: zabbix-agent2
     enabled: yes
     state: started
+  become: yes
