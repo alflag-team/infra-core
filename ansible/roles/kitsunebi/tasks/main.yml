@@ -1,1 +1,8 @@
 ---
+- name: Git clone kitsunebi
+  git:
+    repo: 'git@github.com:mcplaynetwork/kitsunebi.git'
+    dest: '/home/minecraft/kitsunebi'
+    version: 'master'
+  become: yes
+  become_user: minecraft
