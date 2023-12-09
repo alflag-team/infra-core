@@ -3,6 +3,8 @@ ansible_user: "{{ vault_ansible_user }}"
 ansible_password: "{{ vault_ansible_password }}"
 ansible_sudo_pass: "{{ vault_ansible_sudo_pass }}"
 
+ssh_private_key: "{{ vault_ssh_private_key }}"
+
 user_infra_name: "{{ vault_user_infra_name }}"
 user_infra_password: "{{ vault_user_infra_password }}"
 user_infra_salt: "{{ vault_user_infra_salt }}"
