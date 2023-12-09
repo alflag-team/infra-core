@@ -6,3 +6,13 @@
     version: 'master'
   become: yes
   become_user: minecraft
+
+- name: mkdir data directory
+  file:
+    path: '/home/minecraft/data'
+    state: directory
+    owner: minecraft
+    group: minecraft
+    mode: '0755'
+  become: yes
+  become_user: minecraft
