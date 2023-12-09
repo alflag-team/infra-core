@@ -1,0 +1,9 @@
+---
+- name: Setup minecraft
+  hosts: minecraft
+
+  roles:
+    - common
+    - sshd
+    - docker
+    - kitsunebi
