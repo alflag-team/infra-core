@@ -4,8 +4,6 @@
     repo: 'git@github.com:mcplaynetwork/kitsunebi.git'
     dest: '/home/minecraft/kitsunebi'
     version: 'master'
-  become: yes
-  become_user: minecraft
 
 - name: mkdir data directory
   file:
@@ -14,5 +12,3 @@
     owner: minecraft
     group: minecraft
     mode: '0755'
-  become: yes
-  become_user: minecraft
