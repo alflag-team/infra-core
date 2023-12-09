@@ -23,7 +23,7 @@
 - name: Create minecraft group
   group:
     name: "{{ user_minecraft_name }}"
-    gid: 1000
+    gid: 1001
     state: present
   become: yes
   when: "'minecraft' in group_names"
@@ -31,7 +31,7 @@
 - name: Create minecraft user
   user:
     name: "{{ user_minecraft_name }}"
-    uid: 1000
+    uid: 1001
     password: "{{ user_minecraft_password | password_hash( 'sha512', user_minecraft_salt ) }}"
     update_password: always
     group: minecraft

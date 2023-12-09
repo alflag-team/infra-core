@@ -3,9 +3,13 @@ ansible_user: "{{ vault_ansible_user }}"
 ansible_password: "{{ vault_ansible_password }}"
 ansible_sudo_pass: "{{ vault_ansible_sudo_pass }}"
 
-user_infra_name: "{{ vault_user_infra }}"
+user_infra_name: "{{ vault_user_infra_name }}"
 user_infra_password: "{{ vault_user_infra_password }}"
 user_infra_salt: "{{ vault_user_infra_salt }}"
+
+user_minecraft_name: "{{ vault_user_minecraft_name }}"
+user_minecraft_password: "{{ vault_user_minecraft_password }}"
+user_minecraft_salt: "{{ vault_user_minecraft_salt }}"
 
 mysql_login_unix_socket: "/var/run/mysqld/mysqld.sock"
 mysql_root_password: "{{ vault_mysql_root_password }}"
