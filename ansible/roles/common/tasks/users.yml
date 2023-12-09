@@ -26,7 +26,7 @@
     gid: 1000
     state: present
   become: yes
-  when: inventory_hostname == 'minecraft'
+  when: "'minecraft' in group_names"
 
 - name: Create minecraft user
   user:
@@ -41,4 +41,4 @@
     home: /home/minecraft
     state: present
   become: yes
-  when: inventory_hostname == 'minecraft'
+  when: "'minecraft' in group_names"
