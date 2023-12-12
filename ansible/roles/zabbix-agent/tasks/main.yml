@@ -40,6 +40,7 @@
     group: root
     mode: 0755
   become: yes
+  notify: restart zabbix-agent
 
 - name: Copy mysql.conf
   template:
@@ -49,6 +50,7 @@
     group: root
     mode: 0644
   become: yes
+  notify: restart zabbix-agent
 
 - name: Enable Zabbix Agent
   systemd:
