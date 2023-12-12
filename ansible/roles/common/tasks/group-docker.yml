@@ -1,0 +1,6 @@
+---
+- name: Create docker group
+  group:
+    name: "docker"
+    gid: 999
+    state: present

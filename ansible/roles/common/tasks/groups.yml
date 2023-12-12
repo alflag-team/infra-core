@@ -11,3 +11,10 @@
     apply:
       become: yes
   when: "'minecraft' in group_names"
+
+- name: Create docker group
+  include_tasks:
+    file: group-docker.yml
+    apply:
+      become: yes
+  
