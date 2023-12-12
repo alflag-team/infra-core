@@ -1,0 +1,13 @@
+---
+- name: Create infra group
+  include_tasks:
+    file: group-infra.yml
+    apply:
+      become: yes
+
+- name: Create minecraft group
+  include_tasks:
+    file: group-minecraft.yml
+    apply:
+      become: yes
+  when: "'minecraft' in group_names"

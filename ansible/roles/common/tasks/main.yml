@@ -15,18 +15,13 @@
     name: Asia/Tokyo
   become: yes
 
-- name: User infra
+- name: Create groups
   include_tasks:
-    file: user-infra.yml
-    apply:
-      become: yes
+    file: groups.yml
 
-- name: User minecraft
+- name: Create users
   include_tasks:
-    file: user-minecraft.yml
-    apply:
-      become: yes
-  when: "'minecraft' in group_names"
+    file: users.yml
 
 - name: apt update
   apt:

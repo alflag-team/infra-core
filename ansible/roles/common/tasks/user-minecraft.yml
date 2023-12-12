@@ -1,10 +1,4 @@
 ---
-- name: Create minecraft group
-  group:
-    name: "{{ user_minecraft_name }}"
-    gid: 1001
-    state: present
-
 - name: Create minecraft user
   user:
     name: "{{ user_minecraft_name }}"

@@ -1,0 +1,6 @@
+---
+- name: Create infra group
+  group:
+    name: "{{ user_infra_name }}"
+    gid: 1000
+    state: present
