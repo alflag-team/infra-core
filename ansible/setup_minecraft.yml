@@ -6,4 +6,5 @@
     - common
     - sshd
     - docker
+    - zabbix-agent
     - kitsunebi
