@@ -1,26 +1,18 @@
 ---
-- name: Create kitsunebi directory
-  file:
-    path: "/opt/kitsunebi"
-    state: directory
-    owner: minecraft
-    group: minecraft
-    mode: "0755"
-  become: yes
-
 - name: Git clone kitsunebi
   git:
     repo: "https://github.com/mcplaynetwork/kitsunebi.git"
-    dest: "/opt/kitsunebi"
+    dest: "/home/minecraft/kitsunebi"
     version: "master"
   become: yes
   become_user: minecraft
 
 - name: mkdir data directory
   file:
-    path: "/opt/data"
+    path: "/home/minecraft/data"
     state: directory
     owner: minecraft
     group: minecraft
     mode: "0755"
   become: yes
+  become_user: minecraft
