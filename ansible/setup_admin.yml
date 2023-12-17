@@ -1,0 +1,9 @@
+---
+- name: Setup admin
+  hosts: admin
+
+  roles:
+    - common
+    - sshd
+    - zabbix-agent
+    - infra-core
