@@ -36,13 +36,3 @@
     group: infra
   become: yes
   become_user: infra
-
-- name: mkdir data directory
-  file:
-    path: "/home/infra/data"
-    state: absent
-    owner: infra
-    group: infra
-    mode: "0755"
-  become: yes
-  become_user: infra
