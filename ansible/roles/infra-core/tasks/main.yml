@@ -27,20 +27,20 @@
   become: yes
   become_user: infra
 
-- name: mkdir data directory
+- name: Create symlink to dist
   file:
-    path: "/home/infra/data"
-    state: directory
+    src: "/home/infra/repos/infra-core/dist"
+    dest: "/home/infra/dist"
+    state: link
     owner: infra
     group: infra
-    mode: "0755"
   become: yes
   become_user: infra
 
-- name: mkdir dist directory
+- name: mkdir data directory
   file:
-    path: "/home/infra/dist"
-    state: directory
+    path: "/home/infra/data"
+    state: absent
     owner: infra
     group: infra
     mode: "0755"
