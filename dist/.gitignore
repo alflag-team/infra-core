@@ -1,0 +1,9 @@
+*
+
+# Allow directories
+!*/
+
+# Allow git files
+!.gitkeep
+!.gitignore
+!README.md
