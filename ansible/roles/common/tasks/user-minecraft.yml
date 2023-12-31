@@ -27,3 +27,11 @@
     mode: 0600
     owner: "{{ user_minecraft_name }}"
     group: "{{ user_minecraft_name }}"
+
+- name: Copy .gitconfig
+  template:
+    src: .gitconfig
+    dest: "/home/{{ user_minecraft_name }}/.gitconfig"
+    owner: "{{ user_minecraft_name }}"
+    group: "{{ user_minecraft_name }}"
+    mode: 0600
