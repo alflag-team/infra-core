@@ -1,0 +1,8 @@
+---
+- name: Git clone infra-core
+  git:
+    repo: "https://github.com/alflag-team/infra-core.git"
+    dest: "/home/infra/repos/infra-core"
+    version: "master"
+  become: yes
+  become_user: infra
