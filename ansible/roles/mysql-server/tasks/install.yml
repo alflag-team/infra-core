@@ -1,0 +1,45 @@
+---
+- name: Install MySQL Server
+  apt:
+    update_cache: yes
+    name:
+      - mysql-server-8.0
+      - mysql-client-8.0
+      - python3-pymysql
+    state: present
+  become: yes
+
+- name: Set MySQL Root Password
+  mysql_user:
+    login_user: "root"
+    login_password: "{{ mysql_root_password }}"
+    login_unix_socket: "{{ mysql_login_unix_socket }}"
+    name: "root"
+    password: "{{ mysql_root_password }}"
+    check_implicit_admin: yes
+    state: present
+
+- name: Remove anonymous users
+  mysql_user:
+    login_user: "root"
+    login_password: "{{ mysql_root_password }}"
+    login_unix_socket: "{{ mysql_login_unix_socket }}"
+    name: ""
+    state: absent
+
+- name: Copy mysqld.cnf
+  template:
+    src: mysqld.cnf
+    dest: /etc/mysql/mysql.conf.d/mysqld.cnf
+    owner: root
+    group: root
+    mode: 0644
+  become: yes
+  notify: restart mysql
+
+- name: Enable MySQL Service
+  service:
+    name: mysql
+    enabled: yes
+    state: started
+  become: yes

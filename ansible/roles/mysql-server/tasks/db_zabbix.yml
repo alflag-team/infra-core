@@ -1,0 +1,30 @@
+---
+- name: Create Zabbix Database
+  mysql_db:
+    login_user: "root"
+    login_password: "{{ mysql_root_password }}"
+    login_unix_socket: "{{ mysql_login_unix_socket }}"
+    name: "{{ mysql_zabbix_dbname }}"
+    state: present
+
+- name: Create Zabbix User
+  mysql_user:
+    login_user: "root"
+    login_password: "{{ mysql_root_password }}"
+    login_unix_socket: "{{ mysql_login_unix_socket }}"
+    name: "{{ mysql_zabbix_user }}"
+    password: "{{ mysql_zabbix_password }}"
+    host: "10.210.2.%"
+    priv: "zabbix.*:ALL"
+    state: present
+
+- name: Create zabbix_monitor User
+  mysql_user:
+    login_user: "root"
+    login_password: "{{ mysql_root_password }}"
+    login_unix_socket: "{{ mysql_login_unix_socket }}"
+    name: "{{ mysql_zabbix_monitor_user }}"
+    password: "{{ mysql_zabbix_monitor_password }}"
+    host: "127.0.0.1"
+    priv: "*.*:REPLICATION CLIENT,PROCESS,SHOW DATABASES,SHOW VIEW"
+    state: present
