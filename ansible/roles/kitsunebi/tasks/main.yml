@@ -1,17 +1,4 @@
 ---
-- name: mkdir opt/kitsunebi directory
-  file:
-    path: "/opt/kitsunebi"
-    state: directory
-    owner: minecraft
-    group: minecraft
-    mode: "0755"
-  become: yes
-
-- name: Git clone kitsunebi
-  git:
-    repo: "https://github.com/mcplaynetwork/kitsunebi.git"
-    dest: "/opt/kitsunebi"
-    version: "master"
-  become: yes
-  become_user: minecraft
+- name: install kitsunebi
+  include_tasks:
+    file: install.yml
