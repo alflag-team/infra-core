@@ -8,7 +8,7 @@
 
 - name: Copy redis.conf
   template:
-    src: redis.conf
+    src: ./etc/redis/redis.conf
     dest: /etc/redis/redis.conf
     owner: redis
     group: redis
