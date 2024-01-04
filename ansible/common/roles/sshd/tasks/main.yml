@@ -1,0 +1,22 @@
+---
+- name: Copy sshd_config
+  copy:
+    src: ./etc/ssh/sshd_config
+    dest: /etc/ssh/sshd_config
+    owner: root
+    group: root
+    mode: 0644
+  become: yes
+  notify:
+    - restart sshd
+
+- name: Copy sshd_config.d/99-password-auth
+  copy:
+    src: ./etc/ssh/sshd_config.d/99-password-auth
+    dest: /etc/ssh/sshd_config.d/99-password-auth
+    owner: root
+    group: root
+    mode: 0644
+  become: yes
+  notify:
+    - restart sshd

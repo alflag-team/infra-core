@@ -1,0 +1,7 @@
+---
+- name: Setup admin
+  hosts: admin
+
+  roles:
+    - zabbix-agent
+    - infra-core

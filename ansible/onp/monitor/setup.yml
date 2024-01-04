@@ -1,0 +1,8 @@
+---
+- name: Setup monitor
+  hosts: monitor
+
+  roles:
+    - nginx
+    - php-fpm
+    - zabbix-server

@@ -1,9 +1,0 @@
----
-- name: Setup database
-  hosts: database
-
-  roles:
-    - common
-    - sshd
-    - mysql-server
-    - zabbix-agent
