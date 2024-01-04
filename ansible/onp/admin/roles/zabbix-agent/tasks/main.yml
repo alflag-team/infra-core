@@ -30,7 +30,7 @@
   become: yes
 
 - name: Copy Zabbix Agent Configuration
-  template:
+  copy:
     src: ./etc/zabbix/zabbix_agent2.conf
     dest: /etc/zabbix/zabbix_agent2.conf
     owner: root
@@ -46,16 +46,6 @@
     owner: root
     group: root
     mode: 0755
-  become: yes
-  notify: restart zabbix-agent
-
-- name: Copy mysql.conf
-  template:
-    src: ./etc/zabbix/zabbix_agent2.d/plugins.d/mysql.conf
-    dest: /etc/zabbix/zabbix_agent2.d/plugins.d/mysql.conf
-    owner: root
-    group: root
-    mode: 0644
   become: yes
   notify: restart zabbix-agent
 
