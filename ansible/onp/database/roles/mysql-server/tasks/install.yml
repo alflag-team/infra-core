@@ -28,8 +28,8 @@
     state: absent
 
 - name: Copy mysqld.cnf
-  template:
-    src: mysqld.cnf
+  copy:
+    src: ./etc/mysql/mysql.conf.d/mysqld.cnf
     dest: /etc/mysql/mysql.conf.d/mysqld.cnf
     owner: root
     group: root
