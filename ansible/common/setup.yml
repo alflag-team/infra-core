@@ -1,0 +1,12 @@
+---
+- name: Setup
+  hosts: all
+
+  roles:
+    - hostname
+    - timezone
+    - locale
+    - sshd
+    - groups
+    - users
+    - apt

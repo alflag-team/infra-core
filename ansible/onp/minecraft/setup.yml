@@ -1,0 +1,8 @@
+---
+- name: Setup minecraft
+  hosts: minecraft
+
+  roles:
+    - docker
+    - zabbix-agent
+    - kitsunebi

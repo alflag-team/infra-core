@@ -1,9 +1,0 @@
----
-- name: Setup cache
-  hosts: cache
-
-  roles:
-    - common
-    - sshd
-    - redis-server
-    - zabbix-agent

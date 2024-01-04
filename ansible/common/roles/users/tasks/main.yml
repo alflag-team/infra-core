@@ -1,0 +1,12 @@
+---
+- name: User infra
+  include_tasks:
+    file: user-infra.yml
+    apply:
+      become: yes
+
+- name: User minecraft
+  include_tasks:
+    file: user-minecraft.yml
+    apply:
+      become: yes
