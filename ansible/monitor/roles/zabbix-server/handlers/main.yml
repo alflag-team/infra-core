@@ -1,7 +1,14 @@
 ---
-- name: restart nginx
+- name: restart zabix-agent2
   service:
-    name: nginx
+    name: zabbix-agent2
+    state: restarted
+    enabled: yes
+  become: yes
+
+- name: restart zabix-server
+  service:
+    name: zabbix-server
     state: restarted
     enabled: yes
   become: yes

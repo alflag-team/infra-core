@@ -29,6 +29,7 @@
     group: root
     mode: 0644
   become: yes
+  notify: restart zabbix-server
 
 - name: Create Symbolic Link
   file:
@@ -36,6 +37,7 @@
     dest: /usr/share/zabbix/assets/fonts/ipag.ttf
     state: link
   become: yes
+  notify: restart zabbix-server
 
 - name: Replace ZBX_GRAPH_FONT_NAME
   lineinfile:
@@ -43,6 +45,7 @@
     regexp: "^define\\('ZBX_GRAPH_FONT_NAME',.*$"
     line: "define('ZBX_GRAPH_FONT_NAME', 'ipag');"
   become: yes
+  notify: restart zabbix-server
 
 - name: Enable Zabbix Server
   systemd:
@@ -67,6 +70,7 @@
     group: root
     mode: 0644
   become: yes
+  notify: restart zabbix-agent2
 
 - name: Enable Zabbix Agent
   systemd:
