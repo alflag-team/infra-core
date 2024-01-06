@@ -2,15 +2,13 @@
 - name: Download Zabbix Package
   get_url:
     url: https://repo.zabbix.com/zabbix/6.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_6.0-4+ubuntu22.04_all.deb
-    dest: /tmp/zabbix-release_6.0-4+ubuntu22.04_all.deb
+    dest: "/tmp/{{ zabbix_package_name }}"
+    checksum: "{{ zabbix_package_checksum }}"
   become: yes
 
 - name: Install Zabbix Package
-  shell: dpkg -i /tmp/zabbix-release_6.0-4+ubuntu22.04_all.deb
-  become: yes
-
-- name: Update apt
   apt:
+    deb: "/tmp/{{ zabbix_package_name }}"
     update_cache: yes
   become: yes
 
