@@ -4,4 +4,6 @@
 
   roles:
     - zabbix-agent
+    - python3-pip
     - infra-core
+    - ansible

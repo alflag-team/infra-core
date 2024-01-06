@@ -1,0 +1,8 @@
+---
+- name: Install ansible
+  pip:
+    name:
+      - ansible
+    extra_args: --user
+  become: true
+  become_user: infra
