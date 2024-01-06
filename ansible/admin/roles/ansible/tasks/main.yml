@@ -4,5 +4,6 @@
     name:
       - ansible
     extra_args: --user
+  check_mode: false
   become: true
   become_user: infra
