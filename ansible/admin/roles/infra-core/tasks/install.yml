@@ -4,5 +4,6 @@
     repo: "https://github.com/alflag-team/infra-core.git"
     dest: "/home/infra/repos/infra-core"
     version: "master"
+    update: false
   become: yes
   become_user: infra
