@@ -20,6 +20,7 @@
     url: https://download.docker.com/linux/ubuntu/gpg
     dest: /etc/apt/keyrings/docker.asc
     mode: 0644
+    checksum: "{{ docker_gpg_checksum }}"
   become: yes
 
 - name: Add docker repository
