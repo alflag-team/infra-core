@@ -1,4 +1,11 @@
 ---
+- name: Install sshpass
+  apt:
+    name:
+      - sshpass
+    state: present
+  become: yes
+
 - name: Install ansible
   pip:
     name:
