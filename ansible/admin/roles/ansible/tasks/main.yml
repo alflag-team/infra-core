@@ -9,7 +9,7 @@
 - name: Install ansible
   pip:
     name:
-      - ansible
+      - ansible==9.1.0
     extra_args: --user
   check_mode: no
   become: true
