@@ -3,5 +3,6 @@
   hosts: cache
 
   roles:
+    - apt
     - redis-server
     - zabbix-agent

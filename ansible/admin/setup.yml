@@ -3,6 +3,7 @@
   hosts: admin
 
   roles:
+    - apt
     - zabbix-agent
     - python3-pip
     - infra-core

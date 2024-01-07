@@ -3,6 +3,7 @@
   hosts: minecraft
 
   roles:
+    - apt
     - docker
     - zabbix-agent
     - kitsunebi
