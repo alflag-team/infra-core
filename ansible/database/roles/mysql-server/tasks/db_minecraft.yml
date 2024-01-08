@@ -1,0 +1,19 @@
+---
+- name: Create minecraft Database
+  mysql_db:
+    login_user: "root"
+    login_password: "{{ mysql_root_password }}"
+    login_unix_socket: "{{ mysql_login_unix_socket }}"
+    name: "{{ mysql_minecraft_dbname }}"
+    state: present
+
+- name: Create minecraft User
+  mysql_user:
+    login_user: "root"
+    login_password: "{{ mysql_root_password }}"
+    login_unix_socket: "{{ mysql_login_unix_socket }}"
+    name: "{{ mysql_minecraft_user }}"
+    password: "{{ mysql_minecraft_password }}"
+    host: "10.210.30.%"
+    priv: "{{ mysql_minecraft_dbname }}.*:ALL"
+    state: present

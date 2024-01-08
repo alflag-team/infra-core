@@ -18,11 +18,16 @@ user_minecraft_salt: "{{ vault_user_minecraft_salt }}"
 
 mysql_login_unix_socket: "/var/run/mysqld/mysqld.sock"
 mysql_root_password: "{{ vault_mysql_root_password }}"
+
 mysql_zabbix_dbname: "{{ vault_mysql_zabbix_dbname}}"
 mysql_zabbix_user: "{{ vault_mysql_zabbix_user }}"
 mysql_zabbix_password: "{{ vault_mysql_zabbix_password }}"
 mysql_zabbix_monitor_user: "{{ vault_mysql_zabbix_monitor_user }}"
 mysql_zabbix_monitor_password: "{{ vault_mysql_zabbix_monitor_password }}"
+
+mysql_minecraft_dbname: "{{ vault_mysql_minecraft_dbname}}"
+mysql_minecraft_user: "{{ vault_mysql_minecraft_user }}"
+mysql_minecraft_password: "{{ vault_mysql_minecraft_password }}"
 
 zabbix_dbhost: "10.210.4.3"
 zabbix_package_name: "zabbix-release.deb"
