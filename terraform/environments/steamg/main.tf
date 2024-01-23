@@ -12,5 +12,5 @@ module "qemu" {
   disk_type    = "scsi"
   disk_storage = "local-lvm"
   disk_size    = "128G"
-  ipconfig0    = "ip=10.210.31.4/24,gw=10.210.0.1"
+  ipconfig0    = "ip=10.210.31.1/24,gw=10.210.0.1"
 }
