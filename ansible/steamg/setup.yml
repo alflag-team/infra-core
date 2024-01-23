@@ -1,0 +1,7 @@
+---
+- name: Setup steamg
+  hosts: steamg
+
+  roles:
+    - apt
+    - zabbix-agent
