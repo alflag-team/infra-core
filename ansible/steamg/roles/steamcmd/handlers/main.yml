@@ -1,0 +1,37 @@
+---
+- name: Create steam group
+  group:
+    name: "steam"
+    gid: 10000
+    state: present
+  become: yes
+
+- name: Create steam user
+  user:
+    name: "steam"
+    uid: 10000
+    password: "!"
+    update_password: always
+    group: steam
+    groups: sudo
+    shell: /bin/bash
+    create_home: yes
+    home: /home/steam
+    state: present
+  become: yes
+
+- name: To install SteamCMD the multiverse repository and x86 packages must be enabled.
+  command: sudo add-apt-repository multiverse; sudo dpkg --add-architecture i386
+  become: yes
+
+- name: apt update
+  apt:
+    update_cache: yes
+  become: yes
+
+- name: apt install steamcmd
+  apt:
+    name:
+      - steamcmd
+    state: present
+  become: yes
