@@ -10,7 +10,7 @@ module "qemu" {
   memory       = 8192
   os_type      = "cloud-init"
   disk_type    = "scsi"
-  disk_storage = "local-lvm"
-  disk_size    = "128G"
+  disk_storage = "hdd-01"
+  disk_size    = "64G"
   ipconfig0    = "ip=10.210.31.1/24,gw=10.210.0.1"
 }
