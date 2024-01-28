@@ -20,6 +20,7 @@ user            = mysql
 # socket        = /var/run/mysqld/mysqld.sock
 # port          = 3306
 # datadir       = /var/lib/mysql
+max_connections = 500
 
 
 # If MySQL is running as a replication slave, this should be
