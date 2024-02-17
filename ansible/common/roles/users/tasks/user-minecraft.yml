@@ -34,8 +34,8 @@
 
 - name: Copy .gitconfig
   template:
-    src: ./home/mincraft/.gitconfig
-    dest: /home/{{ user_minecraft_name }}/.gitconfig
+    src: "./home/minecraft/.gitconfig"
+    dest: "/home/{{ user_minecraft_name }}/.gitconfig"
     owner: "{{ user_minecraft_name }}"
     group: "{{ user_minecraft_name }}"
     mode: 0600
