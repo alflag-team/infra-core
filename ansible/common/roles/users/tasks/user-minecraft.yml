@@ -19,6 +19,8 @@
     mode: 0700
     owner: "{{ user_minecraft_name }}"
     group: "{{ user_minecraft_name }}"
+  become: yes
+  become_user: "{{ user_minecraft_name }}"
 
 - name: Copy ssh private key
   copy:
@@ -27,14 +29,18 @@
     mode: 0600
     owner: "{{ user_minecraft_name }}"
     group: "{{ user_minecraft_name }}"
+  become: yes
+  become_user: "{{ user_minecraft_name }}"
 
 - name: Copy .gitconfig
   template:
-    src: "./home/mincraft/.gitconfig"
-    dest: "/home/{{ user_minecraft_name }}/.gitconfig"
+    src: ./home/mincraft/.gitconfig
+    dest: /home/{{ user_minecraft_name }}/.gitconfig
     owner: "{{ user_minecraft_name }}"
     group: "{{ user_minecraft_name }}"
     mode: 0600
+  become: yes
+  become_user: "{{ user_minecraft_name }}"
 
 - name: Create symlink to kitsunebi
   file:
@@ -43,3 +49,5 @@
     state: link
     owner: "{{ user_minecraft_name }}"
     group: "{{ user_minecraft_name }}"
+  become: yes
+  become_user: "{{ user_minecraft_name }}"
