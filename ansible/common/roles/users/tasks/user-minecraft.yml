@@ -9,7 +9,7 @@
     groups: sudo
     shell: /bin/bash
     create_home: yes
-    home: /opt/kitsunebi
+    home: /home/minecraft
     state: present
 
 - name: Create .ssh directory
