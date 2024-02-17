@@ -35,3 +35,11 @@
     mode: 0600
     owner: "{{ user_minecraft_name }}"
     group: "{{ user_minecraft_name }}"
+
+- name: Create symlink to kitsunebi
+  file:
+    src: "/opt/kitsunebi"
+    dest: "/home/minecraft/kitsunebi"
+    state: link
+    owner: minecraft
+    group: minecraft
