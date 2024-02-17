@@ -1,0 +1,6 @@
+[user]
+  email = admin@mcplay.biz
+  name = {{ inventory_hostname }}
+
+[safe]
+  directory = /opt/kitsunebi

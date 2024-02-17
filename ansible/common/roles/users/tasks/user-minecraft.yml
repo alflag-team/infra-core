@@ -29,12 +29,12 @@
     group: "{{ user_minecraft_name }}"
 
 - name: Copy .gitconfig
-  copy:
-    src: "./home/{{ user_minecraft_name }}/.gitconfig"
+  template:
+    src: "./home/mincraft/.gitconfig"
     dest: "/home/{{ user_minecraft_name }}/.gitconfig"
-    mode: 0600
     owner: "{{ user_minecraft_name }}"
     group: "{{ user_minecraft_name }}"
+    mode: 0600
 
 - name: Create symlink to kitsunebi
   file:
