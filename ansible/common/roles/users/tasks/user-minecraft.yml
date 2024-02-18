@@ -45,3 +45,4 @@
     state: link
     owner: "{{ user_minecraft_name }}"
     group: "{{ user_minecraft_name }}"
+    force: yes
