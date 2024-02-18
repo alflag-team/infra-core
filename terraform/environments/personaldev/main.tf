@@ -16,4 +16,5 @@ module "personaldev1002" {
   memory        = 1024
   network_ip    = "10.210.11.2/24"
   root_password = var.root_password
+  nesting       = true
 }

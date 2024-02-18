@@ -20,4 +20,8 @@ resource "proxmox_lxc" "main" {
     gw     = var.network_gateway
     ip     = var.network_ip
   }
+  
+  features {
+    nesting = var.nesting
+  }
 }

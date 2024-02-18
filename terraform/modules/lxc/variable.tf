@@ -69,3 +69,8 @@ variable "rootfs_storage" {
   type    = string
   default = "local-lvm"
 }
+
+variable "nesting" {
+  type    = bool
+  default = false
+}
