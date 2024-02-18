@@ -1,0 +1,8 @@
+---
+- name: Setup personaldev
+  hosts: personaldev
+
+  roles:
+    - apt
+    - docker
+    - zabbix-agent

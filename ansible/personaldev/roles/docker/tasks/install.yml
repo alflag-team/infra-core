@@ -1,0 +1,19 @@
+---
+- name: Install docker
+  apt:
+    name:
+      - docker-ce
+      - docker-ce-cli
+      - containerd.io
+      - docker-buildx-plugin
+      - docker-compose-plugin
+    update_cache: yes
+    state: present
+  become: yes
+
+- name: Enable docker
+  systemd:
+    name: docker
+    enabled: yes
+    state: started
+  become: yes
