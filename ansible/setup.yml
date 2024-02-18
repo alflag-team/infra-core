@@ -5,6 +5,9 @@
 - name: Setup admin
   import_playbook: admin/setup.yml
 
+- name: Setup personaldev
+  import_playbook: personaldev/setup.yml
+
 - name: Setup monitor
   import_playbook: monitor/setup.yml
 
