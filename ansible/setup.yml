@@ -1,24 +1,32 @@
 ---
 - name: Setup common
   import_playbook: common/setup.yml
+  ignore_unreachable: true
 
 - name: Setup admin
   import_playbook: admin/setup.yml
+  ignore_unreachable: true
 
 - name: Setup personaldev
   import_playbook: personaldev/setup.yml
+  ignore_unreachable: true
 
 - name: Setup monitor
   import_playbook: monitor/setup.yml
+  ignore_unreachable: true
 
 - name: Setup cache
   import_playbook: cache/setup.yml
+  ignore_unreachable: true
 
 - name: Setup database
   import_playbook: database/setup.yml
+  ignore_unreachable: true
 
 - name: Setup minecraft
   import_playbook: minecraft/setup.yml
+  ignore_unreachable: true
 
 - name: Setup steamg
   import_playbook: steamg/setup.yml
+  ignore_unreachable: true
