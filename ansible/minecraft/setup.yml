@@ -5,5 +5,6 @@
   roles:
     - apt
     - docker
+    - restic
     - zabbix-agent
     - kitsunebi
