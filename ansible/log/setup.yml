@@ -1,0 +1,8 @@
+---
+- name: Setup log
+  hosts: log
+
+  roles:
+    - apt
+    - rsyslog
+    - zabbix-agent
