@@ -1,6 +1,7 @@
 ---
 - name: Setup admin
   hosts: admin
+  ignore_unreachable: true
 
   roles:
     - apt

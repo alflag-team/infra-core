@@ -1,6 +1,7 @@
 ---
 - name: Setup steamg
   hosts: steamg
+  ignore_unreachable: true
 
   roles:
     - apt

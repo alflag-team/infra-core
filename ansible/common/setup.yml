@@ -1,6 +1,7 @@
 ---
 - name: Setup
   hosts: all
+  ignore_unreachable: true
 
   roles:
     - hostname

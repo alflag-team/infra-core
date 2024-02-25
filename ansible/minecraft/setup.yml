@@ -1,6 +1,7 @@
 ---
 - name: Setup minecraft
   hosts: minecraft
+  ignore_unreachable: true
 
   roles:
     - apt

@@ -1,6 +1,7 @@
 ---
 - name: Setup monitor
   hosts: monitor
+  ignore_unreachable: true
 
   roles:
     - apt
