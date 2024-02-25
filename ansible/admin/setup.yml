@@ -8,3 +8,4 @@
     - python3-pip
     - infra-core
     - ansible
+    - terraform

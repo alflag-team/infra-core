@@ -1,0 +1,26 @@
+---
+- name: Create /usr/share/keyrings
+  file:
+    path: /usr/share/keyrings
+    state: directory
+    mode: 0755
+  become: true
+
+- name: Download hashicorp gpg key
+  get_url:
+    url: https://apt.releases.hashicorp.com/gpg
+    dest: /usr/share/keyrings/hashicorp-archive-keyring.gpg
+    mode: 0644
+  become: true
+
+- name: Add hashicorp repository
+  apt_repository:
+    repo: deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com {{ ansible_distribution_release }} main
+    state: present
+  become: true
+
+- name: Install terraform
+  apt:
+    name: terraform
+    state: present
+  become: true
