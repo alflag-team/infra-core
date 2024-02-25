@@ -7,7 +7,7 @@
       - mysql-client-8.0
       - python3-pymysql
     state: present
-  become: yes
+  become: true
 
 - name: Set MySQL Root Password
   mysql_user:
@@ -34,7 +34,7 @@
     owner: root
     group: root
     mode: 0644
-  become: yes
+  become: true
   notify: restart mysql
 
 - name: Enable MySQL Service
@@ -42,4 +42,4 @@
     name: mysql
     enabled: yes
     state: started
-  become: yes
+  become: true

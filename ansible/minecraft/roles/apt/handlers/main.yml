@@ -4,4 +4,4 @@
     name: unattended-upgrades
     state: restarted
     enabled: yes
-  become: yes
+  become: true

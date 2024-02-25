@@ -4,4 +4,4 @@
     name:
       - python3-pip
     state: present
-  become: yes
+  become: true

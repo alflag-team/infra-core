@@ -4,11 +4,11 @@
     name: zabbix-agent2
     state: restarted
     enabled: yes
-  become: yes
+  become: true
 
 - name: restart zabix-server
   service:
     name: zabbix-server
     state: restarted
     enabled: yes
-  become: yes
+  become: true

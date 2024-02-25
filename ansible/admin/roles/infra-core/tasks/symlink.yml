@@ -6,7 +6,7 @@
     state: link
     owner: infra
     group: infra
-  become: yes
+  become: true
   become_user: infra
 
 - name: Create symlink to ansible
@@ -16,7 +16,7 @@
     state: link
     owner: infra
     group: infra
-  become: yes
+  become: true
   become_user: infra
 
 - name: Create symlink to dist
@@ -26,5 +26,5 @@
     state: link
     owner: infra
     group: infra
-  become: yes
+  become: true
   become_user: infra

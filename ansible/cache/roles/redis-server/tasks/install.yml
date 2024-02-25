@@ -4,7 +4,7 @@
     name:
       - redis-server
     state: present
-  become: yes
+  become: true
 
 - name: Copy redis.conf
   copy:
@@ -13,7 +13,7 @@
     owner: redis
     group: redis
     mode: 0644
-  become: yes
+  become: true
   notify: restart redis-server
 
 - name: Enable redis-server
@@ -21,4 +21,4 @@
     name: redis-server
     state: started
     enabled: yes
-  become: yes
+  become: true

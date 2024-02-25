@@ -3,7 +3,7 @@
   apt:
     deb: "https://repo.zabbix.com/zabbix/6.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_6.0-4+ubuntu22.04_all.deb"
     update_cache: yes
-  become: yes
+  become: true
 
 - name: Install Zabbix Agent
   apt:
@@ -11,14 +11,14 @@
       - zabbix-agent2
       - zabbix-agent2-plugin-*
     state: present
-  become: yes
+  become: true
 
 - name: Add zabbix user to docker group
   user:
     name: zabbix
     groups: docker
     append: yes
-  become: yes
+  become: true
 
 - name: Copy Zabbix Agent Configuration
   copy:
@@ -27,7 +27,7 @@
     owner: root
     group: root
     mode: 0644
-  become: yes
+  become: true
   notify: restart zabbix-agent
 
 - name: Create /var/lib/zabbix directory
@@ -37,7 +37,7 @@
     owner: root
     group: root
     mode: 0755
-  become: yes
+  become: true
   notify: restart zabbix-agent
 
 - name: Enable Zabbix Agent
@@ -45,4 +45,4 @@
     name: zabbix-agent2
     enabled: yes
     state: started
-  become: yes
+  become: true

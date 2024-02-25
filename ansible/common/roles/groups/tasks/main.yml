@@ -3,17 +3,17 @@
   include_tasks:
     file: group-infra.yml
     apply:
-      become: yes
+      become: true
 
 - name: Create minecraft group
   include_tasks:
     file: group-minecraft.yml
     apply:
-      become: yes
+      become: true
 
 - name: Create docker group
   include_tasks:
     file: group-docker.yml
     apply:
-      become: yes
+      become: true
   

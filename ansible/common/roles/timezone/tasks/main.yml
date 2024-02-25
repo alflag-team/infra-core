@@ -2,4 +2,4 @@
 - name: Set timezone
   timezone:
     name: Asia/Tokyo
-  become: yes
+  become: true

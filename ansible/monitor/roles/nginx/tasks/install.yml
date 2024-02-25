@@ -4,13 +4,13 @@
     name:
       - nginx
     state: present
-  become: yes
+  become: true
 
 - name: Copy Zabbix Nginx Config
   template:
     src: zabbix.conf
     dest: /etc/nginx/conf.d/zabbix.conf
-  become: yes
+  become: true
   notify: restart nginx
 
 - name: Enable Nginx
@@ -18,4 +18,4 @@
     name: nginx
     enabled: yes
     state: started
-  become: yes
+  become: true

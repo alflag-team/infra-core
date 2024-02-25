@@ -5,5 +5,5 @@
     dest: "/home/infra/repos/infra-core"
     version: "master"
     update: false
-  become: yes
+  become: true
   become_user: infra

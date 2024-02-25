@@ -2,4 +2,4 @@
 - name: Set hostname
   hostname:
     name: "{{ inventory_hostname }}"
-  become: yes
+  become: true

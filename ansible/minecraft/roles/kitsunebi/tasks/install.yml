@@ -6,12 +6,12 @@
     owner: minecraft
     group: minecraft
     mode: "0755"
-  become: yes
+  become: true
 
 - name: Git clone kitsunebi
   git:
     repo: "https://github.com/mcplaynetwork/kitsunebi.git"
     dest: "/opt/kitsunebi"
     version: "master"
-  become: yes
+  become: true
   become_user: minecraft

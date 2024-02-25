@@ -19,7 +19,7 @@
     mode: 0700
     owner: "{{ user_minecraft_name }}"
     group: "{{ user_minecraft_name }}"
-  become: yes
+  become: true
   become_user: "{{ user_minecraft_name }}"
 
 - name: Copy ssh private key

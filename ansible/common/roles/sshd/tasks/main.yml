@@ -6,7 +6,7 @@
     owner: root
     group: root
     mode: 0644
-  become: yes
+  become: true
   notify:
     - restart sshd
 
@@ -17,6 +17,6 @@
     owner: root
     group: root
     mode: 0644
-  become: yes
+  become: true
   notify:
     - restart sshd

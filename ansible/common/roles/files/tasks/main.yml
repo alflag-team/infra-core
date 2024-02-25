@@ -3,4 +3,4 @@
   file:
     path: /tmp/zabbix-release_6.0-4+ubuntu22.04_all.deb
     state: absent
-  become: yes
+  become: true

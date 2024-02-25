@@ -9,11 +9,11 @@
       - docker-compose-plugin
     update_cache: yes
     state: present
-  become: yes
+  become: true
 
 - name: Enable docker
   systemd:
     name: docker
     enabled: yes
     state: started
-  become: yes
+  become: true

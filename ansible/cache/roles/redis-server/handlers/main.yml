@@ -4,4 +4,4 @@
     name: redis-server
     state: restarted
     enabled: yes
-  become: yes
+  become: true

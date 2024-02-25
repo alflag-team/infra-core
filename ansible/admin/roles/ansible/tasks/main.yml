@@ -4,7 +4,7 @@
     name:
       - sshpass
     state: present
-  become: yes
+  become: true
 
 - name: Install ansible
   pip:
