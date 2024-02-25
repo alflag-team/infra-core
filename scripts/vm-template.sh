@@ -3,7 +3,7 @@
 VM_ID=9000
 VM_NAME=ubuntu-server-22.04
 VM_CORES=2
-VM_MEMORY=$(( 1024 ))
+VM_MEMORY=$((1024))
 VM_STORAGE=local-lvm
 
 # Function to handle errors and cleanup
