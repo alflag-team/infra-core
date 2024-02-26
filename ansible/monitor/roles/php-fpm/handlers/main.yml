@@ -3,5 +3,5 @@
   service:
     name: php8.1-fpm
     state: restarted
-    enabled: yes
+    enabled: true
   become: true

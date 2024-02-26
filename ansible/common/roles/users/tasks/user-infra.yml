@@ -8,6 +8,6 @@
     group: infra
     groups: sudo
     shell: /bin/bash
-    create_home: yes
+    create_home: true
     home: /home/infra
     state: present

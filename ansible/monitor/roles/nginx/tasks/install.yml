@@ -16,6 +16,6 @@
 - name: Enable Nginx
   systemd:
     name: nginx
-    enabled: yes
+    enabled: true
     state: started
   become: true

@@ -1,7 +1,7 @@
 ---
 - name: Install rsyslog
   apt:
-    update_cache: yes
+    update_cache: true
     name:
       - rsyslog
     state: present
@@ -10,6 +10,6 @@
 - name: Enable rsyslog Service
   service:
     name: rsyslog
-    enabled: yes
+    enabled: true
     state: started
   become: true

@@ -1,7 +1,7 @@
 ---
 - name: Install MySQL Server
   apt:
-    update_cache: yes
+    update_cache: true
     name:
       - mysql-server-8.0
       - mysql-client-8.0
@@ -16,7 +16,7 @@
     login_unix_socket: "{{ mysql_login_unix_socket }}"
     name: "root"
     password: "{{ mysql_root_password }}"
-    check_implicit_admin: yes
+    check_implicit_admin: true
     state: present
 
 - name: Remove anonymous users
@@ -40,6 +40,6 @@
 - name: Enable MySQL Service
   service:
     name: mysql
-    enabled: yes
+    enabled: true
     state: started
   become: true

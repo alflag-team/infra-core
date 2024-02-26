@@ -3,5 +3,5 @@
   systemd_service:
     name: unattended-upgrades
     state: restarted
-    enabled: yes
+    enabled: true
   become: true

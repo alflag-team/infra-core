@@ -11,6 +11,6 @@
     name:
       - ansible==9.1.0
     extra_args: --user
-  check_mode: no
+  check_mode: false
   become: true
   become_user: infra

@@ -3,5 +3,5 @@
   service:
     name: rsyslog
     state: restarted
-    enabled: yes
+    enabled: true
   become: true

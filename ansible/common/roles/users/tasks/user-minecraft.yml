@@ -8,7 +8,7 @@
     group: minecraft
     groups: sudo
     shell: /bin/bash
-    create_home: yes
+    create_home: true
     home: /home/minecraft
     state: present
 
@@ -45,4 +45,4 @@
     state: link
     owner: "{{ user_minecraft_name }}"
     group: "{{ user_minecraft_name }}"
-    force: yes
+    force: true

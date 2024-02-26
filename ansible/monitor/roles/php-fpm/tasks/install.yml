@@ -19,6 +19,6 @@
 - name: Enable php-fpm
   systemd:
     name: php8.1-fpm
-    enabled: yes
+    enabled: true
     state: started
   become: true
