@@ -5,7 +5,7 @@
     weekday: "*"
     day: "*"
     month: "*"
-    hour: "*/1"
+    hour: "4,16"
     minute: "0"
     user: "minecraft"
     job: "/opt/kitsunebi/scripts/commit.sh"
