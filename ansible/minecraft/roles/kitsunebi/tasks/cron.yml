@@ -1,0 +1,42 @@
+---
+- name: commit.sh cron job
+  cron:
+    name: "kitsunebi commit.sh"
+    weekday: "*"
+    day: "*"
+    month: "*"
+    hour: "*/1"
+    minute: "0"
+    user: "minecraft"
+    job: "/opt/kitsunebi/scripts/commit.sh"
+    cron_file: "kitsunebi"
+    state: present
+  become: true
+
+- name: push.sh cron job
+  cron:
+    name: "kitsunebi push.sh"
+    weekday: "*"
+    day: "*"
+    month: "*"
+    hour: "*/1"
+    minute: "5"
+    user: "minecraft"
+    job: "/opt/kitsunebi/scripts/push.sh"
+    cron_file: "kitsunebi"
+    state: present
+  become: true
+
+- name: backup.sh cron job
+  cron:
+    name: "kitsunebi backup.sh"
+    weekday: "*"
+    day: "*"
+    month: "*"
+    hour: "12"
+    minute: "0"
+    user: "minecraft"
+    job: "/opt/kitsunebi/scripts/backup.sh"
+    cron_file: "kitsunebi"
+    state: present
+  become: true
