@@ -24,7 +24,7 @@
     user: "minecraft"
     job: "/opt/kitsunebi/scripts/push.sh"
     cron_file: "kitsunebi"
-    state: present
+    state: absent
   become: true
 
 - name: backup.sh cron job
