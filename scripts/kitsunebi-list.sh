@@ -101,7 +101,7 @@ Perform() {
       md5=$(md5sum "$dir/$file" | cut -d ' ' -f 1)
 
       # ファイル名、更新日時、md5ハッシュを list.txt に保存
-      echo "$file $timestamp $md5" >>"$dir/list.txt"
+      echo "$file,$timestamp,$md5" >>"$dir/list.txt"
     done
 
     Logger "INFO" "Created $dir/list.txt"
