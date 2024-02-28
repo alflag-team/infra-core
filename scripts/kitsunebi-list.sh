@@ -88,7 +88,7 @@ Perform() {
   fi
 
   # ファイルが存在しない場合は .dist-files.csv を作成
-  # ファイルが存在する場合は、ファイル名、更新日時、md5 ハッシュを .dist-files.csv に保存
+  # ファイルが存在する場合は、更新日時、ファイル名、md5 ハッシュを .dist-files.csv に保存
   if [ -z "$files" ]; then
     Logger "INFO" "No files found in $dir"
     touch "$dir/.dist-files.csv"
@@ -100,8 +100,8 @@ Perform() {
       # ファイルのmd5ハッシュを取得
       md5=$(md5sum "$dir/$file" | cut -d ' ' -f 1)
 
-      # ファイル名、更新日時、md5ハッシュを .dist-files.csv に保存
-      echo "$file,$timestamp,$md5" >>"$dir/.dist-files.csv"
+      # 更新日時、ファイル名、md5ハッシュを .dist-files.csv に保存
+      echo "$timestamp,$file,$md5" >>"$dir/.dist-files.csv"
     done
 
     Logger "INFO" "Created $dir/.dist-files.csv"
