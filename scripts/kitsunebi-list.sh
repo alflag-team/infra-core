@@ -87,11 +87,11 @@ Perform() {
     return 1
   fi
 
-  # ファイルが存在しない場合は list.txt を作成
-  # ファイルが存在する場合は、ファイル名、更新日時、md5 ハッシュを list.txt に保存
+  # ファイルが存在しない場合は .dist-files を作成
+  # ファイルが存在する場合は、ファイル名、更新日時、md5 ハッシュを .dist-files に保存
   if [ -z "$files" ]; then
     Logger "INFO" "No files found in $dir"
-    touch "$dir/list.txt"
+    touch "$dir/.dist-files"
   else
     for file in $files; do
       # ファイルの更新日時を取得
@@ -100,11 +100,11 @@ Perform() {
       # ファイルのmd5ハッシュを取得
       md5=$(md5sum "$dir/$file" | cut -d ' ' -f 1)
 
-      # ファイル名、更新日時、md5ハッシュを list.txt に保存
-      echo "$file,$timestamp,$md5" >>"$dir/list.txt"
+      # ファイル名、更新日時、md5ハッシュを .dist-files に保存
+      echo "$file,$timestamp,$md5" >>"$dir/.dist-files"
     done
 
-    Logger "INFO" "Created $dir/list.txt"
+    Logger "INFO" "Created $dir/.dist-files"
   fi
 }
 
