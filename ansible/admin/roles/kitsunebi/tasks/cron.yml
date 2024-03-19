@@ -1,0 +1,14 @@
+---
+- name: list.sh cron job
+  cron:
+    name: "kitsunebi list.sh"
+    weekday: "*"
+    day: "*"
+    month: "*"
+    hour: "*"
+    minute: "0"
+    user: "minecraft"
+    job: "/opt/kitsunebi/scripts/list.sh"
+    cron_file: "kitsunebi"
+    state: present
+  become: true
