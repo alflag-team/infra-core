@@ -1,4 +1,8 @@
 ---
+- name: install dependencies
+  include_tasks:
+    file: dependencies.yml
+
 - name: install kitsunebi
   include_tasks:
     file: install.yml
