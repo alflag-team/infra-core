@@ -8,5 +8,6 @@
     - zabbix-agent
     - python3-pip
     - infra-core
+    - kitsunebi
     - ansible
     # - terraform
