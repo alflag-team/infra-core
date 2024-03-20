@@ -14,6 +14,7 @@ resource "proxmox_virtual_environment_vm" "main" {
 
   disk {
     datastore_id = var.disk_datastore_id
+    file_id      = var.disk_file_id
     interface    = var.disk_interface
     size         = var.disk_size
   }
@@ -36,6 +37,10 @@ resource "proxmox_virtual_environment_vm" "main" {
     dedicated = var.memory_dedicated
     floating  = 0
     shared    = 0
+  }
+
+  network_device {
+    bridge = "vmbr0"
   }
 
   operating_system {

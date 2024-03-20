@@ -35,17 +35,21 @@ variable "cpu_sockets" {
 }
 
 variable "disk_datastore_id" {
-  type    = number
+  type    = string
   default = "hdd-01"
+}
+
+variable "disk_file_id" {
+  type = string
 }
 
 variable "disk_interface" {
   type    = string
-  default = "virtio"
+  default = "virtio0"
 }
 
 variable "disk_size" {
-  type = number
+  type    = number
   default = 8
 }
 
@@ -70,7 +74,7 @@ variable "memory_dedicated" {
 }
 
 variable "operating_system_type" {
-  type = string
+  type    = string
   default = "l26"
 }
 
