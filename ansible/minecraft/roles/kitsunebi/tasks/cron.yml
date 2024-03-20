@@ -26,3 +26,17 @@
     cron_file: "kitsunebi"
     state: present
   become: true
+
+- name: sync.sh cron job
+  cron:
+    name: "kitsunebi sync.sh"
+    weekday: "*"
+    day: "*"
+    month: "*"
+    hour: "*"
+    minute: "0"
+    user: "minecraft"
+    job: "/opt/kitsunebi/scripts/sync.sh"
+    cron_file: "kitsunebi"
+    state: present
+  become: true
