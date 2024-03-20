@@ -31,8 +31,7 @@ variable "cpu_sockets" {
 }
 
 variable "disk_datastore_id" {
-  type    = string
-  default = "hdd-01"
+  type = string
 }
 
 variable "disk_file_id" {
