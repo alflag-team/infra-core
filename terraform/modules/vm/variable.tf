@@ -15,10 +15,6 @@ variable "node_name" {
   type = string
 }
 
-variable "vm_id" {
-  type = number
-}
-
 variable "cpu_architecture" {
   type    = string
   default = "x86_64"

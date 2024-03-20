@@ -4,7 +4,6 @@ resource "proxmox_virtual_environment_vm" "main" {
   tags        = var.tags
 
   node_name = var.node_name
-  vm_id     = var.vm_id
 
   cpu {
     architecture = var.cpu_architecture
