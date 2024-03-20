@@ -13,20 +13,6 @@
     state: present
   become: true
 
-- name: push.sh cron job
-  cron:
-    name: "kitsunebi push.sh"
-    weekday: "*"
-    day: "*"
-    month: "*"
-    hour: "*/1"
-    minute: "5"
-    user: "minecraft"
-    job: "/opt/kitsunebi/scripts/push.sh"
-    cron_file: "kitsunebi"
-    state: absent
-  become: true
-
 - name: backup.sh cron job
   cron:
     name: "kitsunebi backup.sh"
