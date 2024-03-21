@@ -1,8 +1,8 @@
 terraform {
   required_providers {
     proxmox = {
-      source  = "telmate/proxmox"
-      version = ">=2.9.0"
+      source  = "bpg/proxmox"
+      version = "~> 0.49.0"
     }
   }
 
@@ -13,4 +13,6 @@ terraform {
       name = "admin"
     }
   }
+
+  # backend "local" {}
 }
