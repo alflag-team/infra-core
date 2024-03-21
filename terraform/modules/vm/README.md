@@ -25,7 +25,7 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [proxmox_virtual_environment_vm.main](https://registry.terraform.io/providers/telmate/proxmox/latest/docs/resources/virtual_environment_vm) | resource |
+| [proxmox_virtual_environment_vm.main](https://registry.terraform.io/providers/bpg/proxmox/latest/docs/resources/virtual_environment_vm) | resource |
 
 ## Inputs
 
@@ -35,8 +35,9 @@ No modules.
 | <a name="input_cpu_cores"></a> [cpu\_cores](#input\_cpu\_cores) | n/a | `number` | `1` | no |
 | <a name="input_cpu_sockets"></a> [cpu\_sockets](#input\_cpu\_sockets) | n/a | `number` | `1` | no |
 | <a name="input_description"></a> [description](#input\_description) | n/a | `string` | n/a | yes |
-| <a name="input_disk_datastore_id"></a> [disk\_datastore\_id](#input\_disk\_datastore\_id) | n/a | `number` | `"hdd-01"` | no |
-| <a name="input_disk_interface"></a> [disk\_interface](#input\_disk\_interface) | n/a | `string` | `"virtio"` | no |
+| <a name="input_disk_datastore_id"></a> [disk\_datastore\_id](#input\_disk\_datastore\_id) | n/a | `string` | n/a | yes |
+| <a name="input_disk_file_id"></a> [disk\_file\_id](#input\_disk\_file\_id) | n/a | `string` | n/a | yes |
+| <a name="input_disk_interface"></a> [disk\_interface](#input\_disk\_interface) | n/a | `string` | `"virtio0"` | no |
 | <a name="input_disk_size"></a> [disk\_size](#input\_disk\_size) | n/a | `number` | `8` | no |
 | <a name="input_ipv4_address"></a> [ipv4\_address](#input\_ipv4\_address) | n/a | `string` | n/a | yes |
 | <a name="input_ipv4_gateway"></a> [ipv4\_gateway](#input\_ipv4\_gateway) | n/a | `string` | n/a | yes |
@@ -50,7 +51,6 @@ No modules.
 | <a name="input_tags"></a> [tags](#input\_tags) | n/a | `list(string)` | `[]` | no |
 | <a name="input_user_account_keys"></a> [user\_account\_keys](#input\_user\_account\_keys) | n/a | `list(string)` | n/a | yes |
 | <a name="input_user_account_username"></a> [user\_account\_username](#input\_user\_account\_username) | n/a | `string` | n/a | yes |
-| <a name="input_vm_id"></a> [vm\_id](#input\_vm\_id) | n/a | `number` | n/a | yes |
 
 ## Outputs
 
