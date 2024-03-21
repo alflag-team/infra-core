@@ -13,7 +13,12 @@ variable "endpoint" {
 #   sensitive = true
 # }
 
-variable "disk_file_id" {
+variable "url" {
   type    = string
-  default = "hdd-01:iso/jammy-server-cloudimg-amd64.img"
+  default = "https://cloud-images.ubuntu.com/jammy/current/jammy-server-cloudimg-amd64.img"
+}
+
+variable "node_name" {
+  type    = string
+  default = "kitsune"
 }
