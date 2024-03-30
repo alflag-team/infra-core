@@ -12,6 +12,14 @@
     home: /home/infra
     state: present
 
+- name: Copy ssh private key
+  copy:
+    content: "{{ user_infra_ssh_private_key }}"
+    dest: "/home/{{ user_infra_name }}/.ssh/infra"
+    mode: 0600
+    owner: "{{ user_infra_name }}"
+    group: "{{ user_infra_name }}"
+
 - name: Set authorized key
   authorized_key:
     user: "{{ user_infra_name }}"
