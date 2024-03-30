@@ -57,11 +57,13 @@ variable "ipv4_gateway" {
 }
 
 variable "user_account_keys" {
-  type = list(string)
+  type    = list(string)
+  default = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIECXPPShDyRAzNSsgLZ8nVZ4eyEcdKBpb4+vIadMWxlf"]
 }
 
 variable "user_account_username" {
-  type = string
+  type    = string
+  default = "infra"
 }
 
 variable "memory_dedicated" {

@@ -15,8 +15,5 @@ module "admin1002" {
   ipv4_address = "10.210.6.2/24"
   ipv4_gateway = "10.210.0.1"
 
-  user_account_keys     = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIECXPPShDyRAzNSsgLZ8nVZ4eyEcdKBpb4+vIadMWxlf"]
-  user_account_username = "infra"
-
   memory_dedicated = 2048
 }
