@@ -22,14 +22,6 @@
   become: true
   become_user: "{{ user_minecraft_name }}"
 
-- name: Copy ssh private key
-  copy:
-    content: "{{ ssh_private_key }}"
-    dest: "/home/{{ user_minecraft_name }}/.ssh/id_rsa"
-    mode: 0600
-    owner: "{{ user_minecraft_name }}"
-    group: "{{ user_minecraft_name }}"
-
 - name: Copy .gitconfig
   template:
     src: "./home/minecraft/.gitconfig"
