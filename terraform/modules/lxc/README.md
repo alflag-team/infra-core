@@ -32,6 +32,7 @@ No modules.
 | <a name="input_hookscript"></a> [hookscript](#input\_hookscript) | n/a | `string` | `"local:snippets/hookscript.sh"` | no |
 | <a name="input_hostname"></a> [hostname](#input\_hostname) | n/a | `string` | n/a | yes |
 | <a name="input_memory"></a> [memory](#input\_memory) | n/a | `number` | `512` | no |
+| <a name="input_nesting"></a> [nesting](#input\_nesting) | n/a | `bool` | `false` | no |
 | <a name="input_network_bridge"></a> [network\_bridge](#input\_network\_bridge) | n/a | `string` | `"vmbr0"` | no |
 | <a name="input_network_gateway"></a> [network\_gateway](#input\_network\_gateway) | n/a | `string` | `"10.210.0.1"` | no |
 | <a name="input_network_ip"></a> [network\_ip](#input\_network\_ip) | n/a | `string` | n/a | yes |
