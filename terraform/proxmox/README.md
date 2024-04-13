@@ -1,6 +1,6 @@
-# Terraform
+# Proxmox
 
-インフラを管理している Terraform のコードが管理されています。
+Proxmox を管理している Terraform のコードが管理されています。
 
 * [Google Cloud のベストプラクティスガイド](https://cloud.google.com/docs/terraform/best-practices-for-terraform)
 
