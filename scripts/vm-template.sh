@@ -23,6 +23,14 @@ else
     handle_error "Failed to download Ubuntu Server image."
 fi
 
+# Resize the image to 8GB
+qemu-img resize jammy-server-cloudimg-amd64.img 8G
+if [ $? -eq 0 ]; then
+    echo "Success: Resized image to 8GB successfully."
+else
+    handle_error "Failed to resize image."
+fi
+
 # Create a new VM with VirtIO SCSI controller
 qm create $VM_ID --name $VM_NAME --memory $VM_MEMORY --net0 virtio,bridge=vmbr0 --scsihw virtio-scsi-pci
 if [ $? -eq 0 ]; then
