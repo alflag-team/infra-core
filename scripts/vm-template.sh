@@ -23,8 +23,8 @@ else
     handle_error "Failed to download Ubuntu Server image."
 fi
 
-# Resize the image to 8GB
-qemu-img resize jammy-server-cloudimg-amd64.img 8G
+# Resize the image to 1GB
+qemu-img resize jammy-server-cloudimg-amd64.img 1G
 if [ $? -eq 0 ]; then
     echo "Success: Resized image to 8GB successfully."
 else
