@@ -32,7 +32,7 @@ else
 fi
 
 # Import the downloaded image to local-lvm storage
-qm set $VM_ID --scsi0 $VM_STORAGE:0,import-from=$(pwd)/jammy-server-cloudimg-amd64.img
+qm set $VM_ID --virtio0 $VM_STORAGE:0,import-from=$(pwd)/jammy-server-cloudimg-amd64.img
 if [ $? -eq 0 ]; then
     echo "Success: Imported image to VM storage successfully."
 else
