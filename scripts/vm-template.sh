@@ -55,8 +55,8 @@ else
     handle_error "Failed to set Cloud-Init drive."
 fi
 
-# Set bootdisk to scsi0
-qm set $VM_ID --boot order=scsi0
+# Set bootdisk to virtio0
+qm set $VM_ID --boot order=virtio0
 if [ $? -eq 0 ]; then
     echo "Success: Set boot order successfully."
 else
