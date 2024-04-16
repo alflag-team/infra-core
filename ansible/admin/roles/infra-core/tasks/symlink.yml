@@ -1,7 +1,7 @@
 ---
 - name: Create symlink to terraform
   file:
-    src: "/home/infra/repos/infra-core/terraform"
+    src: "/opt/infra-core/terraform"
     dest: "/home/infra/terraform"
     state: link
     owner: infra
@@ -11,7 +11,7 @@
 
 - name: Create symlink to ansible
   file:
-    src: "/home/infra/repos/infra-core/ansible"
+    src: "/opt/infra-core/ansible"
     dest: "/home/infra/ansible"
     state: link
     owner: infra
@@ -21,7 +21,7 @@
 
 - name: Create symlink to dist
   file:
-    src: "/home/infra/repos/infra-core/dist"
+    src: "/opt/infra-core/dist"
     dest: "/home/infra/dist"
     state: link
     owner: infra
