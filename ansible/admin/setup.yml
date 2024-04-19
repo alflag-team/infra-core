@@ -4,10 +4,11 @@
   ignore_unreachable: true
 
   roles:
-    - apt
-    - zabbix-agent
-    - python3-pip
-    - infra-core
-    - kitsunebi
-    - ansible
+    - swap
+    # - apt
+    # - zabbix-agent
+    # - python3-pip
+    # - infra-core
+    # - kitsunebi
+    # - ansible
     # - terraform
