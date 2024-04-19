@@ -18,13 +18,3 @@
     group: infra
   become: true
   become_user: infra
-
-- name: Create symlink to dist
-  file:
-    src: "/opt/infra-core/dist"
-    dest: "/home/infra/dist"
-    state: link
-    owner: infra
-    group: infra
-  become: true
-  become_user: infra
