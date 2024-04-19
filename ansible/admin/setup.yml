@@ -5,10 +5,10 @@
 
   roles:
     - swap
-    # - apt
-    # - zabbix-agent
-    # - python3-pip
-    # - infra-core
-    # - kitsunebi
-    # - ansible
+    - apt
+    - zabbix-agent
+    - python3-pip
+    - infra-core
+    - kitsunebi
+    - ansible
     # - terraform
