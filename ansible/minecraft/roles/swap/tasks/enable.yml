@@ -1,0 +1,29 @@
+---
+- name: Check if swap file exists
+  stat:
+    path: "{{ swap_file_path }}"
+  register: swap_file
+
+- name: Create swap file
+  command: dd if=/dev/zero of="{{ swap_file_path }}" bs=1M count={{ swap_file_size_mb }}
+  when: not swap_file.stat.exists
+  become: true
+
+- name: Set swap file permissions
+  file:
+    path: "{{ swap_file_path }}"
+    owner: root
+    group: root
+    mode: 0600
+  become: true
+  when: not swap_file.stat.exists
+
+- name: Make swap file
+  command: mkswap "{{ swap_file_path }}"
+  become: true
+  when: not swap_file.stat.exists
+
+- name: Enable swap file
+  command: swapon -a
+  become: true
+  when: not swap_file.stat.exists
