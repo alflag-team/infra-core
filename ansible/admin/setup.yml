@@ -4,6 +4,7 @@
   ignore_unreachable: true
 
   roles:
+    - swap
     - apt
     - zabbix-agent
     - python3-pip
