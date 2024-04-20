@@ -1,12 +1,12 @@
 ---
-- name: restart zabix-agent2
+- name: restart zabbix-agent2
   service:
     name: zabbix-agent2
     state: restarted
     enabled: true
   become: true
 
-- name: restart zabix-server
+- name: restart zabbix-server
   service:
     name: zabbix-server
     state: restarted
