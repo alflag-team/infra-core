@@ -5,6 +5,7 @@
 
   roles:
     - apt
+    - mysql-server
     - nginx
     - php-fpm
     - zabbix-server

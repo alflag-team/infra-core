@@ -1,0 +1,8 @@
+---
+- name: install mysql-server
+  include_tasks:
+    file: install.yml
+
+- name: Setup zabbiz database
+  include_tasks:
+    file: db_zabbix.yml
