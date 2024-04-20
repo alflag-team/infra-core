@@ -26,7 +26,7 @@ mysql_minecraft_dbname: "{{ vault_mysql_minecraft_dbname}}"
 mysql_minecraft_user: "{{ vault_mysql_minecraft_user }}"
 mysql_minecraft_password: "{{ vault_mysql_minecraft_password }}"
 
-zabbix_dbhost: "10.210.4.3"
+zabbix_dbhost: "localhost"
 zabbix_package_name: "zabbix-release.deb"
 zabbix_package_checksum: "sha256:b2a42b3aa88a1ac5260e01ddd4c504607c4674e61d5ad5cb63238a9ebcf07476" # curl -sL https://repo.zabbix.com/zabbix/6.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_6.0-4+ubuntu22.04_all.deb|sha256sum
 
