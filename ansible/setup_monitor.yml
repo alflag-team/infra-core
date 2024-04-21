@@ -1,0 +1,6 @@
+---
+# - name: Setup common
+#   import_playbook: common/setup.yml
+
+- name: Setup monitor
+  import_playbook: monitor/setup.yml
