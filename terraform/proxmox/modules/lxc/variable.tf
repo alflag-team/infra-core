@@ -16,9 +16,12 @@ variable "onboot" {
   default = true
 }
 
-variable "hookscript" {
+variable "ssh_public_keys" {
+  # infra.pub is the public key of the infra user
   type    = string
-  default = "local:snippets/hookscript.sh"
+  default = <<-EOT
+    ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIECXPPShDyRAzNSsgLZ8nVZ4eyEcdKBpb4+vIadMWxlf
+  EOT
 }
 
 variable "start" {

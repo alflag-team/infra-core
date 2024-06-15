@@ -1,13 +1,13 @@
 resource "proxmox_lxc" "main" {
-  target_node  = var.target_node
-  hostname     = var.hostname
-  ostemplate   = var.ostemplate
-  password     = var.root_password
-  memory       = var.memory
-  unprivileged = var.unprivileged
-  onboot       = var.onboot
-  hookscript   = var.hookscript
-  start        = var.start
+  target_node     = var.target_node
+  hostname        = var.hostname
+  ostemplate      = var.ostemplate
+  password        = var.root_password
+  memory          = var.memory
+  unprivileged    = var.unprivileged
+  onboot          = var.onboot
+  ssh_public_keys = var.ssh_public_keys
+  start           = var.start
 
   rootfs {
     storage = var.rootfs_storage
@@ -20,7 +20,7 @@ resource "proxmox_lxc" "main" {
     gw     = var.network_gateway
     ip     = var.network_ip
   }
-  
+
   features {
     nesting = var.nesting
   }
