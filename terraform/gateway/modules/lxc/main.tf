@@ -5,6 +5,7 @@ resource "proxmox_lxc" "main" {
   memory          = var.memory
   unprivileged    = var.unprivileged
   onboot          = var.onboot
+  hookscript      = var.hookscript
   ssh_public_keys = var.ssh_public_keys
   start           = var.start
 

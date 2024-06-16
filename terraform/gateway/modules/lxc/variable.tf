@@ -11,6 +11,11 @@ variable "onboot" {
   default = true
 }
 
+variable "hookscript" {
+  type    = string
+  default = "local:snippets/hookscript.sh"
+}
+
 variable "ssh_public_keys" {
   # root.pub is the public key of the root user
   type    = string
