@@ -43,6 +43,7 @@ post_start_actions() {
   USER_INFRA_UID=1000
   USER_INFRA_SHELL="/bin/bash"
   USER_INFRA_SSH_PUBKEY="ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIECXPPShDyRAzNSsgLZ8nVZ4eyEcdKBpb4+vIadMWxlf"
+  USER_INFRA_PASSWD="passwd"
   GROUP_INFRA_NAME="infra"
   GROUP_INFRA_GID=1000
 
@@ -60,6 +61,9 @@ post_start_actions() {
 
     # Create user
     lxc-attach -n "$CONTAINER_ID" -- useradd -m -u "$USER_INFRA_UID" -g "$GROUP_INFRA_NAME" -s "$USER_INFRA_SHELL" "$USER_INFRA_NAME"
+
+    # Set user password
+    echo "$USER_INFRA_NAME:$USER_INFRA_PASSWD" | lxc-attach -n "$CONTAINER_ID" -- chpasswd
 
     # Add SSH public key to infra user
     log "Adding SSH public key to user: $USER_INFRA_NAME"
