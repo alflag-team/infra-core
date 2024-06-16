@@ -1,6 +1,6 @@
 ---
-- name: Setup common
-  import_playbook: common/setup.yml
+# - name: Setup common
+#   import_playbook: common/setup.yml
 
 - name: Setup gateway
   import_playbook: gateway/setup.yml
