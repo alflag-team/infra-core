@@ -65,7 +65,7 @@ variable "network_ip" {
 
 variable "rootfs_size" {
   type    = string
-  default = "32G"
+  default = "16G"
 }
 
 variable "rootfs_storage" {
