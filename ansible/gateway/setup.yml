@@ -7,3 +7,4 @@
     - apt
     - docker
     - zabbix-agent
+    - cloudflared

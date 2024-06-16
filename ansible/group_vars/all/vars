@@ -31,3 +31,5 @@ zabbix_package_name: "zabbix-release.deb"
 zabbix_package_checksum: "sha256:b2a42b3aa88a1ac5260e01ddd4c504607c4674e61d5ad5cb63238a9ebcf07476" # curl -sL https://repo.zabbix.com/zabbix/6.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_6.0-4+ubuntu22.04_all.deb|sha256sum
 
 docker_gpg_checksum: "sha256:1500c1f56fa9e26b9b8f42452a553675796ade0807cdce11975eb98170b3a570" # curl -sL https://download.docker.com/linux/ubuntu/gpg|sha256sum
+
+cloudflared_tunnel_token__gateway: "{{ vault_cloudflared_tunnel_token__gateway }}"
