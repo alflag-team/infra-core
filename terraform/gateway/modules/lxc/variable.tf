@@ -70,7 +70,7 @@ variable "rootfs_size" {
 
 variable "rootfs_storage" {
   type    = string
-  default = "local-lvm"
+  default = "hdd-01"
 }
 
 variable "nesting" {
