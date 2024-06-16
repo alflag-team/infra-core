@@ -51,7 +51,7 @@ post_start_actions() {
     log "Creating group: $GROUP_INFRA_NAME"
 
     # Create group
-    lxc-attach -n "$CONTAINER_ID" -- groupadd -g "$GROUP_INFRA_GID" "$GROUP_INFRA_NAME"
+    lxc-attach -n "$CONTAINER_ID" -- "groupadd -g $GROUP_INFRA_GID $GROUP_INFRA_NAME"
   fi
 
   # Create infra user
@@ -59,19 +59,19 @@ post_start_actions() {
     log "Creating user: $USER_INFRA_NAME"
 
     # Create user
-    lxc-attach -n "$CONTAINER_ID" -- useradd -m -u "$USER_INFRA_UID" -g "$GROUP_INFRA_NAME" -s "$USER_INFRA_SHELL" "$USER_INFRA_NAME"
+    lxc-attach -n "$CONTAINER_ID" -- "useradd -m -u $USER_INFRA_UID -g $GROUP_INFRA_NAME -s $USER_INFRA_SHELL $USER_INFRA_NAME"
 
     # Add SSH public key to infra user
     log "Adding SSH public key to user: $USER_INFRA_NAME"
-    lxc-attach -n "$CONTAINER_ID" -- mkdir -p "/home/$USER_INFRA_NAME/.ssh"
-    lxc-attach -n "$CONTAINER_ID" -- echo "$USER_INFRA_SSH_PUBKEY" >"/home/$USER_INFRA_NAME/.ssh/authorized_keys"
-    lxc-attach -n "$CONTAINER_ID" -- chown -R "$USER_INFRA_NAME:$GROUP_INFRA_NAME" "/home/$USER_INFRA_NAME/.ssh"
-    lxc-attach -n "$CONTAINER_ID" -- chmod 700 "/home/$USER_INFRA_NAME/.ssh"
-    lxc-attach -n "$CONTAINER_ID" -- chmod 600 "/home/$USER_INFRA_NAME/.ssh/authorized_keys"
+    lxc-attach -n "$CONTAINER_ID" -- "mkdir -p /home/$USER_INFRA_NAME/.ssh"
+    lxc-attach -n "$CONTAINER_ID" -- "echo $USER_INFRA_SSH_PUBKEY >/home/$USER_INFRA_NAME/.ssh/authorized_keys"
+    lxc-attach -n "$CONTAINER_ID" -- "chown -R $USER_INFRA_NAME:$GROUP_INFRA_NAME /home/$USER_INFRA_NAME/.ssh"
+    lxc-attach -n "$CONTAINER_ID" -- "chmod 700 /home/$USER_INFRA_NAME/.ssh"
+    lxc-attach -n "$CONTAINER_ID" -- "chmod 600 /home/$USER_INFRA_NAME/.ssh/authorized_keys"
 
     # Add infra user to sudo group
     log "Adding user: $USER_INFRA_NAME to sudo group"
-    lxc-attach -n "$CONTAINER_ID" -- usermod -aG sudo "$USER_INFRA_NAME"
+    lxc-attach -n "$CONTAINER_ID" -- "usermod -aG sudo $USER_INFRA_NAME"
   fi
 }
 
