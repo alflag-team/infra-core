@@ -10,5 +10,6 @@
   ansible.builtin.copy:
     src: ./etc/unbound/unbound.conf.d/minecraft.local.conf
     dest: /etc/unbound/unbound.conf.d/minecraft.local.conf
+  become: true
   notify:
     - restart unbound
