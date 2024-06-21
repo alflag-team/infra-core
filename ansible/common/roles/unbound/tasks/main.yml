@@ -6,10 +6,10 @@
     state: present
   become: true
 
-- name: Copy minecraft.local.zone
+- name: Copy minecraft.internal.conf
   ansible.builtin.copy:
-    src: ./etc/unbound/unbound.conf.d/minecraft.local.conf
-    dest: /etc/unbound/unbound.conf.d/minecraft.local.conf
+    src: ./etc/unbound/unbound.conf.d/minecraft.internal.conf
+    dest: /etc/unbound/unbound.conf.d/minecraft.internal.conf
   become: true
   notify:
     - restart unbound
