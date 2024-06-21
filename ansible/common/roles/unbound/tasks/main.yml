@@ -1,0 +1,14 @@
+---
+- name: Install unbound
+  ansible.builtin.apt:
+    name:
+      - unbound
+    state: present
+  become: true
+
+- name: Copy minecraft.local.zone
+  ansible.builtin.copy:
+    src: ./etc/unbound/unbound.conf.d/minecraft.local.conf
+    dest: /etc/unbound/unbound.conf.d/minecraft.local.conf
+  notify:
+    - restart unbound
