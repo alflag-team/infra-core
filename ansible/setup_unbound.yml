@@ -1,3 +1,0 @@
----
-- name: Setup unbound
-  import_playbook: unbound/setup.yml
