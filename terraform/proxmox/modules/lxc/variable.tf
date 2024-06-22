@@ -6,21 +6,21 @@ variable "target_node" {
   type = string
 }
 
-variable "root_password" {
-  type    = string
-  default = "password"
-}
-
 variable "onboot" {
   type    = bool
   default = true
 }
 
+variable "hookscript" {
+  type    = string
+  default = "local:snippets/hookscript.sh"
+}
+
 variable "ssh_public_keys" {
-  # infra.pub is the public key of the infra user
+  # root.pub is the public key of the root user
   type    = string
   default = <<-EOT
-    ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIECXPPShDyRAzNSsgLZ8nVZ4eyEcdKBpb4+vIadMWxlf
+    ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIuyNX1pDAB9dyXIXkKq0gVFVll8byzTWF5Kpo517EOu
   EOT
 }
 
@@ -65,12 +65,12 @@ variable "network_ip" {
 
 variable "rootfs_size" {
   type    = string
-  default = "32G"
+  default = "16G"
 }
 
 variable "rootfs_storage" {
   type    = string
-  default = "local-lvm"
+  default = "hdd-01"
 }
 
 variable "nesting" {
