@@ -13,6 +13,12 @@
     state: absent
   become: true
 
+- name: Remove unbound directory
+  ansible.builtin.file:
+    path: /etc/unbound
+    state: absent
+  become: true
+
 - name: Remove unbound
   ansible.builtin.apt:
     name:
