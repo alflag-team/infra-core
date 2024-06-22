@@ -1,11 +1,4 @@
 ---
-- name: Remove unbound
-  ansible.builtin.apt:
-    name:
-      - unbound
-    state: absent
-  become: true
-
 # - name: Copy minecraft.internal.conf
 #   ansible.builtin.copy:
 #     src: ./etc/unbound/unbound.conf.d/minecraft.internal.conf
@@ -13,3 +6,18 @@
 #   become: true
 #   notify:
 #     - restart unbound
+
+- name: Remove minecraft.internal.conf
+  ansible.builtin.file:
+    path: /etc/unbound/unbound.conf.d/minecraft.internal.conf
+    state: absent
+  become: true
+
+- name: Remove unbound
+  ansible.builtin.apt:
+    name:
+      - unbound
+    state: absent
+    purge: true
+    autoremove: true
+  become: true
