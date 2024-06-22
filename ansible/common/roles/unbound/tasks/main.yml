@@ -1,15 +1,15 @@
 ---
-- name: Install unbound
+- name: Remove unbound
   ansible.builtin.apt:
     name:
       - unbound
-    state: present
+    state: absent
   become: true
 
-- name: Copy minecraft.internal.conf
-  ansible.builtin.copy:
-    src: ./etc/unbound/unbound.conf.d/minecraft.internal.conf
-    dest: /etc/unbound/unbound.conf.d/minecraft.internal.conf
-  become: true
-  notify:
-    - restart unbound
+# - name: Copy minecraft.internal.conf
+#   ansible.builtin.copy:
+#     src: ./etc/unbound/unbound.conf.d/minecraft.internal.conf
+#     dest: /etc/unbound/unbound.conf.d/minecraft.internal.conf
+#   become: true
+#   notify:
+#     - restart unbound
