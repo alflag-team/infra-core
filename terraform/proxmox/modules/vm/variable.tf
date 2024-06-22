@@ -1,91 +1,123 @@
 variable "name" {
-  type = string
+  description = "Name of the VM"
+  type        = string
 }
 
-variable "description" {
-  type = string
+variable "target_node" {
+  description = "Node to deploy the VM"
+  type        = string
 }
 
-variable "tags" {
-  type    = list(string)
-  default = []
+variable "vmid" {
+  description = "VM ID"
+  type        = number
+  default     = 0
 }
 
-variable "node_name" {
-  type = string
+variable "desc" {
+  description = "Description of the VM"
+  type        = string
+  default     = "Managed by Terraform"
 }
 
-variable "cpu_architecture" {
-  type    = string
-  default = "x86_64"
+variable "bios" {
+  description = "BIOS type"
+  type        = string
+  default     = "seabios"
 }
 
-variable "cpu_cores" {
-  type    = number
-  default = 1
+variable "onboot" {
+  description = "Start the VM on boot"
+  type        = bool
+  default     = true
 }
 
-variable "cpu_sockets" {
-  type    = number
-  default = 1
+variable "startup" {
+  description = "Startup behavior"
+  type        = string
+  default     = ""
 }
 
-variable "disk_datastore_id" {
-  type = string
+variable "vm_state" {
+  description = "VM state"
+  type        = string
+  default     = "running"
 }
 
-variable "disk_file_id" {
-  type = string
+variable "protection" {
+  description = "Protection"
+  type        = bool
+  default     = false
 }
 
-variable "disk_interface" {
-  type    = string
-  default = "virtio0"
+variable "memory" {
+  description = "Memory size"
+  type        = number
+  default     = 1024
 }
 
-variable "disk_size" {
-  type    = number
-  default = 8
+variable "sockets" {
+  description = "Number of sockets"
+  type        = number
+  default     = 1
 }
 
-variable "ipv4_address" {
-  type = string
+variable "cores" {
+  description = "Number of cores"
+  type        = number
+  default     = 1
 }
 
-variable "ipv4_gateway" {
-  type = string
+variable "automatic_reboot" {
+  description = "Automatic reboot"
+  type        = bool
+  default     = true
 }
 
-variable "user_account_keys" {
-  type    = list(string)
-  default = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIECXPPShDyRAzNSsgLZ8nVZ4eyEcdKBpb4+vIadMWxlf"]
+variable "ciuser" {
+  description = "Cloud-init user"
+  type        = string
 }
 
-variable "user_account_username" {
-  type    = string
-  default = "infra"
+variable "cipassword" {
+  description = "Cloud-init password"
+  type        = string
 }
 
-variable "memory_dedicated" {
-  type = number
+variable "searchdomain" {
+  description = "Search domain"
+  type        = string
+  default     = "alflag.internal"
 }
 
-variable "operating_system_type" {
-  type    = string
-  default = "l26"
+variable "nameserver" {
+  description = "Name server"
+  type        = string
+  default     = "127.0.0.1"
 }
 
-variable "startup_order" {
-  type    = number
-  default = 3
+variable "sshkeys" {
+  # infra.pub is the public key of the infra user
+  description = "SSH keys"
+  type        = string
+  default     = <<-EOT
+    ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIECXPPShDyRAzNSsgLZ8nVZ4eyEcdKBpb4+vIadMWxlf
+EOT
 }
 
-variable "startup_up_delay" {
-  type    = number
-  default = 60
+variable "iso" {
+  description = "ISO to boot from"
+  type        = string
+  default     = "hdd-01:iso/jammy-server-cloudimg-amd64.iso"
 }
 
-variable "startup_down_delay" {
-  type    = number
-  default = 60
+variable "storage" {
+  description = "Storage"
+  type        = string
+}
+
+variable "size" {
+  description = "Disk size"
+  type        = string
+  default     = "16G"
 }
