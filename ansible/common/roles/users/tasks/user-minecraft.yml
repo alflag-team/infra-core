@@ -22,6 +22,16 @@
   become: true
   become_user: "{{ user_minecraft_name }}"
 
+- name: Copy ssh config
+  ansible.builtin.copy:
+    src: "./.ssh/config"
+    dest: "/home/{{ user_minecraft_name }}/.ssh/config"
+    owner: "{{ user_minecraft_name }}"
+    group: "{{ user_minecraft_name }}"
+    mode: 0644
+  become: true
+  become_user: "{{ user_minecraft_name }}"
+
 - name: Copy .gitconfig
   template:
     src: "./home/minecraft/.gitconfig"
