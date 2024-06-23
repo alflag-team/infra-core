@@ -20,5 +20,8 @@
 - name: Setup minecraft
   import_playbook: minecraft/setup.yml
 
+- name: Setup minecraftproxy
+  import_playbook: minecraftproxy/setup.yml
+
 - name: Setup steamg
   import_playbook: steamg/setup.yml

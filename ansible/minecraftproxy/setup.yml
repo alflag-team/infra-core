@@ -1,0 +1,11 @@
+---
+- name: Setup minecraftproxy
+  hosts: minecraftproxy
+  ignore_unreachable: true
+
+  roles:
+    - apt
+    - docker
+    - restic
+    - zabbix-agent
+    - kitsunebi

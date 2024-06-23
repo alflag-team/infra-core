@@ -1,0 +1,12 @@
+---
+- name: install dependencies
+  include_tasks:
+    file: dependencies.yml
+
+- name: install kitsunebi
+  include_tasks:
+    file: install.yml
+
+- name: Setup kitsunebi cron jobs
+  include_tasks:
+    file: cron.yml
