@@ -51,7 +51,7 @@ else
 fi
 
 # Set Cloud-Init drive to the VM
-qm set $VM_ID --ide2 $VM_STORAGE:cloudinit
+qm set $VM_ID --ide3 $VM_STORAGE:cloudinit
 if [ $? -eq 0 ]; then
     echo "Success: Set Cloud-Init drive successfully."
 else
