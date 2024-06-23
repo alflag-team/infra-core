@@ -1,6 +1,43 @@
 ---
-- name: apt update
-  apt:
+- name: Install Zabbix Package
+  ansible.builtin.apt:
+    deb: "https://repo.zabbix.com/zabbix/6.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_6.0-4+ubuntu22.04_all.deb"
     update_cache: true
-    cache_valid_time: 3600 # 1 hour
+  become: true
+
+- name: Install ca-certificates, curl, gnupg
+  ansible.builtin.apt:
+    name:
+      - ca-certificates
+      - curl
+      - gnupg
+    state: present
+    update_cache: true
+  become: true
+
+- name: Create /etc/apt/keyrings
+  file:
+    path: /etc/apt/keyrings
+    state: directory
+    mode: 0755
+  become: true
+
+- name: Download docker gpg key
+  get_url:
+    url: https://download.docker.com/linux/ubuntu/gpg
+    dest: /etc/apt/keyrings/docker.asc
+    mode: 0644
+    checksum: "{{ docker_gpg_checksum }}"
+  become: true
+
+- name: Add docker repository
+  apt_repository:
+    repo: deb [arch=amd64 signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }} stable
+    state: present
+  become: true
+
+- name: apt update
+  ansible.builtin.apt:
+    update_cache: true
+    cache_valid_time: 720 # 12 hours
   become: true
