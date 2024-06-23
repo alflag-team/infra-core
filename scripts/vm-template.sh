@@ -4,23 +4,26 @@ VM_ID=9000
 VM_NAME=ubuntu-server-22.04
 VM_CORES=2
 VM_MEMORY=$((1024))
-VM_STORAGE=local-lvm
+VM_STORAGE=Synology-01-LUN-01
 
 # Function to handle errors and cleanup
 handle_error() {
     echo "Error: $1"
-    if [ -e jammy-server-cloudimg-amd64.img ]; then
-        rm jammy-server-cloudimg-amd64.img
-    fi
+    # if [ -e jammy-server-cloudimg-amd64.img ]; then
+    #     rm jammy-server-cloudimg-amd64.img
+    # fi
     exit 1
 }
 
 # Download Ubuntu Server 22.04 LTS
-wget https://cloud-images.ubuntu.com/jammy/current/jammy-server-cloudimg-amd64.img
-if [ $? -eq 0 ]; then
-    echo "Success: Downloaded Ubuntu Server image successfully."
-else
-    handle_error "Failed to download Ubuntu Server image."
+# ファイルが存在する場合はダウンロードしない
+if [ ! -e jammy-server-cloudimg-amd64.img ]; then
+    wget https://cloud-images.ubuntu.com/jammy/current/jammy-server-cloudimg-amd64.img
+    if [ $? -eq 0 ]; then
+        echo "Success: Downloaded Ubuntu Server 22.04 LTS successfully."
+    else
+        handle_error "Failed to download Ubuntu Server 22.04 LTS."
+    fi
 fi
 
 # Resize the image to 4GB
@@ -40,7 +43,7 @@ else
 fi
 
 # Import the downloaded image to local-lvm storage
-qm set $VM_ID --virtio0 $VM_STORAGE:0,import-from=$(pwd)/jammy-server-cloudimg-amd64.img
+qm set $VM_ID --scsi0 $VM_STORAGE:0,import-from=$(pwd)/jammy-server-cloudimg-amd64.img
 if [ $? -eq 0 ]; then
     echo "Success: Imported image to VM storage successfully."
 else
@@ -55,8 +58,8 @@ else
     handle_error "Failed to set Cloud-Init drive."
 fi
 
-# Set bootdisk to virtio0
-qm set $VM_ID --boot order=virtio0
+# Set bootdisk to scsi0
+qm set $VM_ID --boot order=scsi0
 if [ $? -eq 0 ]; then
     echo "Success: Set boot order successfully."
 else
@@ -80,11 +83,11 @@ else
 fi
 
 # Delete the downloaded image
-rm jammy-server-cloudimg-amd64.img
-if [ $? -eq 0 ]; then
-    echo "Success: Deleted downloaded image successfully."
-else
-    handle_error "Failed to delete downloaded image."
-fi
+# rm jammy-server-cloudimg-amd64.img
+# if [ $? -eq 0 ]; then
+#     echo "Success: Deleted downloaded image successfully."
+# else
+#     handle_error "Failed to delete downloaded image."
+# fi
 
 echo "Success: All steps completed successfully."
