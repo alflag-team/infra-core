@@ -8,6 +8,7 @@ resource "proxmox_lxc" "main" {
   hookscript      = var.hookscript
   ssh_public_keys = var.ssh_public_keys
   start           = var.start
+  swap            = var.swap
 
   rootfs {
     storage = var.rootfs_storage

@@ -34,6 +34,11 @@ variable "memory" {
   default = 512
 }
 
+variable "swap" {
+  type    = number
+  default = 512
+}
+
 variable "ostemplate" {
   type    = string
   default = "hdd-01:vztmpl/ubuntu-22.04-standard_22.04-1_amd64.tar.zst"
