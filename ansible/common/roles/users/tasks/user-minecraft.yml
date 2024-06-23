@@ -29,8 +29,6 @@
     owner: "{{ user_minecraft_name }}"
     group: "{{ user_minecraft_name }}"
     mode: 0644
-  become: true
-  become_user: "{{ user_minecraft_name }}"
 
 - name: Copy .gitconfig
   template:
