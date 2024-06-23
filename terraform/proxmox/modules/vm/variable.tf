@@ -50,6 +50,25 @@ variable "protection" {
   default     = false
 }
 
+variable "boot" {
+  description = "Boot order"
+  type        = string
+  default = "order=scsi0"
+}
+
+variable "clone" {
+  description = "Clone"
+  type        = string
+  default     = "ubuntu-server-22.04"
+}
+
+variable "full_clone" {
+  description = "Full clone"
+  type        = bool
+  default     = true
+  # ISCSI is not support linked clones
+}
+
 variable "memory" {
   description = "Memory size"
   type        = number
@@ -66,6 +85,18 @@ variable "cores" {
   description = "Number of cores"
   type        = number
   default     = 1
+}
+
+variable "scsihw" {
+  description = "SCSI hardware"
+  type        = string
+  default     = "virtio-scsi-pci"
+}
+
+variable "os_type" {
+  description = "OS type"
+  type        = string
+  default     = "cloud-init"
 }
 
 variable "automatic_reboot" {
@@ -105,15 +136,21 @@ variable "sshkeys" {
 EOT
 }
 
+variable "ipconfig0" {
+  description = "IP configuration"
+  type        = string
+}
+
 variable "iso" {
   description = "ISO to boot from"
   type        = string
-  default     = "hdd-01:iso/jammy-server-cloudimg-amd64.iso"
+  default     = "hdd-01:iso/jammy-server-cloudimg-amd64.img"
 }
 
 variable "storage" {
   description = "Storage"
   type        = string
+  default     = "Synology-01-LUN-01"
 }
 
 variable "size" {
