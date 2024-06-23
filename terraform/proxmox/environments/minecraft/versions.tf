@@ -10,7 +10,7 @@ terraform {
     organization = "alflag"
 
     workspaces {
-      name = "minecraftproxy"
+      name = "minecraft"
     }
   }
 
