@@ -1,8 +1,4 @@
 ---
-- name: Setup Docker apt repository
-  include_tasks:
-    file: apt.yml
-
 - name: Install Docker
   include_tasks:
     file: install.yml
