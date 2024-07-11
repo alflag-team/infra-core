@@ -25,3 +25,6 @@
 
 - name: Setup steamg
   import_playbook: steamg/setup.yml
+
+- name: Setup honeypot
+  import_playbook: honeypot/setup.yml
