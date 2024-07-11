@@ -13,7 +13,12 @@ variable "proxmox_api_url" {
   default = "http://10.210.1.1:8006/api2/json"
 }
 
-variable "root_password" {
+variable "ciuser" {
+  type      = string
+  sensitive = true
+}
+
+variable "cipassword" {
   type      = string
   sensitive = true
 }
