@@ -1,0 +1,7 @@
+---
+- name: restart unattended-upgrades
+  systemd_service:
+    name: unattended-upgrades
+    state: restarted
+    enabled: true
+  become: true

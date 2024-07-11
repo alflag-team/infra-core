@@ -1,0 +1,8 @@
+---
+- name: Setup honeypot
+  hosts: honeypot
+  ignore_unreachable: true
+
+  roles:
+    - apt
+    - docker
