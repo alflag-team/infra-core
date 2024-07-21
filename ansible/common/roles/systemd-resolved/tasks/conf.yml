@@ -1,4 +1,13 @@
 ---
+- name: Make sure /etc/systemd/resolved.conf.d directory exists
+  file:
+    path: /etc/systemd/resolved.conf.d
+    state: directory
+    owner: root
+    group: root
+    mode: "0755"
+  become: true
+
 - name: Copy systemd-resolved configuration
   ansible.builtin.copy:
     src: ./etc/systemd/resolved.conf.d/internal.conf
