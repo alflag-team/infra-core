@@ -1,0 +1,6 @@
+---
+# - name: Setup common
+#   import_playbook: common/setup.yml
+
+- name: Setup unbound
+  import_playbook: unbound/setup.yml
