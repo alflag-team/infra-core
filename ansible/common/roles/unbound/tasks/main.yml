@@ -3,21 +3,21 @@
   ansible.builtin.apt:
     name:
       - unbound
-    state: present
+    state: absent
     update_cache: yes
   become: true
 
-- name: Enable unbound
-  ansible.builtin.systemd:
-    name: unbound
-    enabled: yes
-    state: started
-  become: true
+# - name: Enable unbound
+#   ansible.builtin.systemd:
+#     name: unbound
+#     enabled: yes
+#     state: started
+#   become: true
 
-- name: Copy unbound configuration
-  ansible.builtin.copy:
-    src: ./etc/unbound/unbound.conf
-    dest: /etc/unbound/unbound.conf
-  become: true
-  notify:
-    - Restart unbound
+# - name: Copy unbound configuration
+#   ansible.builtin.copy:
+#     src: ./etc/unbound/unbound.conf
+#     dest: /etc/unbound/unbound.conf
+#   become: true
+#   notify:
+#     - Restart unbound
