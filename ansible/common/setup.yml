@@ -8,6 +8,7 @@
     - timezone
     - locale
     - sshd
+    - systemd-resolved
     - groups
     - users
     - apt
