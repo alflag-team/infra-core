@@ -1,0 +1,8 @@
+---
+- name: Copy systemd-resolved configuration
+  ansible.builtin.copy:
+    src: ./etc/systemd/resolved.conf.d/internal.conf
+    dest: /etc/systemd/resolved.conf.d/internal.conf
+  become: true
+  notify:
+    - Restart systemd-resolved
