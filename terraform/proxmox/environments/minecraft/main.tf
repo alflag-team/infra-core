@@ -3,8 +3,8 @@ module "minecraftwww1001" {
 
   hostname       = "minecraftwww1001"
   target_node    = "kitsune"
-  memory         = 1024
-  swap           = 1024
+  memory         = 2048
+  swap           = 8192
   network_ip     = "10.210.30.111/24"
   rootfs_size    = "16G"
   rootfs_storage = "Synology-01-LUN-01"
