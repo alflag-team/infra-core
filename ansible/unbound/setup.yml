@@ -1,6 +1,6 @@
 ---
 - name: Setup unbound
-  hosts: unboud
+  hosts: unbound
   ignore_unreachable: true
 
   roles:
