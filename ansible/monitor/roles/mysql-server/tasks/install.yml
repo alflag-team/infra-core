@@ -1,7 +1,6 @@
 ---
 - name: Install MySQL Server
   apt:
-    update_cache: true
     name:
       - mysql-server-8.0
       - mysql-client-8.0

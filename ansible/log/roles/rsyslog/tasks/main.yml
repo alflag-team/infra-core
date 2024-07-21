@@ -1,7 +1,6 @@
 ---
 - name: Install rsyslog
   apt:
-    update_cache: true
     name:
       - rsyslog
     state: present

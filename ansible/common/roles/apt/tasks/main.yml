@@ -2,7 +2,6 @@
 - name: Install Zabbix Package
   ansible.builtin.apt:
     deb: "https://repo.zabbix.com/zabbix/6.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_6.0-4+ubuntu22.04_all.deb"
-    update_cache: true
   become: true
 
 - name: Install ca-certificates, curl, gnupg
@@ -12,7 +11,6 @@
       - curl
       - gnupg
     state: present
-    update_cache: true
   become: true
 
 - name: Create /etc/apt/keyrings
@@ -38,6 +36,5 @@
 
 - name: apt update
   ansible.builtin.apt:
-    update_cache: true
     cache_valid_time: 720 # 12 hours
   become: true

@@ -4,7 +4,6 @@
     name:
       - unbound
     state: present
-    update_cache: yes
   become: true
 
 - name: Enable unbound
