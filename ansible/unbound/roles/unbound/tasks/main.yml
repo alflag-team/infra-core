@@ -6,6 +6,13 @@
     state: present
   become: true
 
+- name: Disable systemd-resolved
+  ansible.builtin.systemd:
+    name: systemd-resolved
+    enabled: no
+    state: stopped
+  become: true
+
 - name: Enable unbound
   ansible.builtin.systemd:
     name: unbound
