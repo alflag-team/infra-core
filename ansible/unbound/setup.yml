@@ -1,0 +1,7 @@
+---
+- name: Setup unbound
+  hosts: all
+  ignore_unreachable: true
+
+  roles:
+    - unbound
