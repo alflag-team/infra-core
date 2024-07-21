@@ -3,4 +3,4 @@
   include_tasks:
     file: conf.yml
   tags: systemd-resolved
-  when: not skip_systemd_resolved
+  when: not skip_systemd_resolved | default(false)
