@@ -21,3 +21,9 @@
 #   become: true
 #   notify:
 #     - Restart unbound
+
+- name: Delete unbound configuration
+  ansible.builtin.file:
+    path: /etc/unbound/unbound.conf
+    state: absent
+  become: true
