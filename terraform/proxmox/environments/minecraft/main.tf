@@ -1,7 +1,7 @@
-module "minecraftwww1001" {
+module "minecraftpanel1001" {
   source = "../../modules/lxc"
 
-  hostname       = "minecraftwww1001"
+  hostname       = "minecraftpanel1001"
   target_node    = "kitsune"
   memory         = 2048
   swap           = 8192

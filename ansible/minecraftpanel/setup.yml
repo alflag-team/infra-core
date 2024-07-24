@@ -1,6 +1,6 @@
 ---
-- name: Setup minecraftwww
-  hosts: minecraftwww
+- name: Setup minecraftpanel
+  hosts: minecraftpanel
   ignore_unreachable: true
 
   roles:
