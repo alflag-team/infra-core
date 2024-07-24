@@ -4,3 +4,11 @@
     file: conf.yml
   tags: systemd-resolved
   when: not skip_systemd_resolved | default(false)
+
+- name: Enable and start systemd-resolved
+  ansible.builtin.systemd:
+    name: systemd-resolved
+    enabled: true
+    state: started
+  tags: systemd-resolved
+  when: not skip_systemd_resolved | default(false)
