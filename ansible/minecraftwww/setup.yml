@@ -1,0 +1,9 @@
+---
+- name: Setup minecraftwww
+  hosts: minecraftwww
+  ignore_unreachable: true
+
+  roles:
+    - mariadb-server
+    - redis-server
+    - zabbix-agent

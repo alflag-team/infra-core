@@ -1,0 +1,32 @@
+---
+- name: Install MariaDB Server
+  ansible.builtin.apt:
+    name:
+      - mariadb-server
+    state: present
+  become: true
+
+- name: Set Root Password
+  community.mysql.mysql_user:
+    login_user: "root"
+    login_password: "{{ db_root_password }}"
+    login_unix_socket: "{{ db_login_unix_socket }}"
+    name: "root"
+    password: "{{ db_root_password }}"
+    check_implicit_admin: true
+    state: present
+
+- name: Remove anonymous users
+  community.mysql.mysql_user:
+    login_user: "root"
+    login_password: "{{ db_root_password }}"
+    login_unix_socket: "{{ db_login_unix_socket }}"
+    name: ""
+    state: absent
+
+- name: Enable service
+  ansible.builtin.service:
+    name: mysql
+    enabled: true
+    state: started
+  become: true
