@@ -1,0 +1,26 @@
+---
+- name: Mount swap file
+  ansible.builtin.mount:
+    name: none
+    src: "{{ swap_file_path }}"
+    fstype: swap
+    opts: sw
+    state: present
+  become: true
+
+- name: Check
+  ansible.builtin.include_tasks:
+    file: check.yml
+
+- name: disable
+  ansible.builtin.include_tasks:
+    file: disable.yml
+  when:
+    - swap_file_existing_size_mb != swap_file_size_mb
+    - swap_file_existing_size_mb != 0
+
+- name: Enable
+  ansible.builtin.include_tasks:
+    file: enable.yml
+  when:
+    - swap_file_existing_size_mb != swap_file_size_mb

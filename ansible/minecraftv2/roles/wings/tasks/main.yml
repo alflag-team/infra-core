@@ -1,0 +1,8 @@
+---
+- name: download wings
+  ansible.builtin.include_tasks:
+    file: download.yml
+
+- name: install wings
+  ansible.builtin.include_tasks:
+    file: install.yml

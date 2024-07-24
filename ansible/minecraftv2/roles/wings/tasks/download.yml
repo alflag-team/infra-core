@@ -1,0 +1,24 @@
+---
+- name: mkdir /etc/pterodactyl directory
+  ansible.builtin.file:
+    path: "/etc/pterodactyl"
+    state: directory
+    owner: root
+    group: root
+    mode: 0755
+  become: true
+
+- name: Download wings binary
+  ansible.builtin.get_url:
+    url: "https://github.com/pterodactyl/wings/releases/latest/download/wings_linux_amd64"
+    dest: /usr/local/bin/wings
+    mode: '0755'
+  become: true
+
+- name: Set wings permission
+  ansible.builtin.file:
+    path: /usr/local/bin/wings
+    owner: root
+    group: root
+    mode: 0755
+  become: true

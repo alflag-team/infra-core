@@ -1,0 +1,14 @@
+---
+- name: Put wings.service
+  ansible.builtin.copy:
+    src: wings.service
+    dest: /etc/systemd/system/wings.service
+    owner: root
+    group: root
+    mode: 0644
+
+- name: Enable wings service
+  ansible.builtin.systemd:
+    name: wings
+    enabled: yes
+    state: started

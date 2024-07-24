@@ -23,6 +23,9 @@
 - name: Setup minecraft
   import_playbook: minecraft/setup.yml
 
+- name: Setup minecraftv2
+  import_playbook: minecraftv2/setup.yml
+
 - name: Setup minecraftproxy
   import_playbook: minecraftproxy/setup.yml
 

@@ -1,0 +1,10 @@
+---
+- name: Disable swap
+  ansible.builtin.command: swapoff -a
+  become: true
+
+- name: Remove swap file
+  ansible.builtin.file:
+    path: "{{ swap_file_path }}"
+    state: absent
+  become: true

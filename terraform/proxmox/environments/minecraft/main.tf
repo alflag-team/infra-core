@@ -24,17 +24,15 @@ module "minecraftproxy1001" {
   nesting        = true
 }
 
-# module "minecraft1002" {
-#   source = "../../modules/vm"
+module "minecraft2001" {
+  source = "../../modules/vm"
 
-#   name        = "minecraft1001"
-#   target_node = "kitsune"
-#   full_clone  = false
-#   memory      = 8192
-#   cores       = 4
-#   ciuser      = var.ciuser
-#   cipassword  = var.cipassword
-#   ipconfig0   = "ip=10.210.30.1/24,gw=10.210.0.1"
-#   storage     = "local-lvm"
-#   size        = "128G"
-# }
+  name        = "minecraft2001"
+  target_node = "kitsune"
+  memory      = 8192
+  ipconfig0   = "10.210.30.1/24"
+  size        = "64G"
+
+  ciuser     = var.ciuser
+  cipassword = var.cipassword
+}
