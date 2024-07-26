@@ -1,9 +1,4 @@
 ---
-- name: Install Zabbix Package
-  ansible.builtin.apt:
-    deb: "https://repo.zabbix.com/zabbix/6.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_6.0-4+ubuntu22.04_all.deb"
-  become: true
-
 - name: Install ca-certificates, curl, gnupg
   ansible.builtin.apt:
     name:

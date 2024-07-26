@@ -6,7 +6,6 @@
   roles:
     - swap
     - apt
-    - zabbix-agent
     - python3-pip
     - infra-core
     - kitsunebi

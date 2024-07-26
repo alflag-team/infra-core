@@ -6,4 +6,3 @@
   roles:
     - apt
     - rsyslog
-    - zabbix-agent

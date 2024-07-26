@@ -13,3 +13,4 @@
     - users
     - apt
     - files
+    - zabbix-agent

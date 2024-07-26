@@ -1,0 +1,15 @@
+---
+- name: install
+  ansible.builtin.include_tasks:
+    - install.yml
+  when: not skip_zabbix_agent | default(false)
+
+- name: users
+  ansible.builtin.include_tasks:
+    - users.yml
+  when: not skip_zabbix_agent | default(false)
+
+- name: config
+  ansible.builtin.include_tasks:
+    - config.yml
+  when: not skip_zabbix_agent | default(false)

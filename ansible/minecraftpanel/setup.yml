@@ -6,4 +6,3 @@
   roles:
     - mariadb-server
     - redis-server
-    - zabbix-agent

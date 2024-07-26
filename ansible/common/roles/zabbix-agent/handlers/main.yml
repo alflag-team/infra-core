@@ -1,0 +1,21 @@
+---
+- name: stop zabbix-agent
+  ansible.builtin.service:
+    name: zabbix-agent2
+    state: stopped
+    enabled: false
+  become: true
+
+- name: start zabbix-agent
+  ansible.builtin.service:
+    name: zabbix-agent2
+    state: started
+    enabled: true
+  become: true
+
+- name: restart zabbix-agent
+  ansible.builtin.service:
+    name: zabbix-agent2
+    state: restarted
+    enabled: true
+  become: true

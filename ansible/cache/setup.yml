@@ -6,4 +6,3 @@
   roles:
     - apt
     - redis-server
-    - zabbix-agent
