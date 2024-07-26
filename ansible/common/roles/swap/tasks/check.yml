@@ -1,7 +1,8 @@
 ---
-- name: Set fact swap_file_path
+- name: Set fact swap_file_path and swap_file_size_mb
   ansible.builtin.set_fact:
     swap_file_path: "{{ swap_file_path | default('/swapfile') }}"
+    swap_file_size_mb: "{{ swap_file_size_mb | default('8192') }}"
 
 - name: Check if swap file exists
   ansible.builtin.stat:
