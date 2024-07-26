@@ -1,2 +1,2 @@
 ---
-skip_systemd_resolv: true
+skip_systemd_resolved: true
