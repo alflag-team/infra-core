@@ -12,7 +12,8 @@
   when:
     - not skip_swap | default(false)
     - ansible_virtualization_type != 'lxc'
-    - swap_file_existing_size_mb != 0 or swap_file_existing_size_mb != swap_file_size_mb
+    - swap_file_existing_size_mb != 0
+    - swap_file_existing_size_mb != swap_file_size_mb
 
 - name: Enable
   ansible.builtin.include_tasks:
