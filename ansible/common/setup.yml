@@ -11,6 +11,7 @@
     - systemd-resolved
     - groups
     - users
+    - swap
     - apt
     - files
     - zabbix-agent

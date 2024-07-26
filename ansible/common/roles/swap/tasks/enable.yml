@@ -6,8 +6,8 @@
 
 - name: Create swap file
   ansible.builtin.command: dd if=/dev/zero of="{{ swap_file_path }}" bs=1M count={{ swap_file_size_mb }}
-  when: not swap_file.stat.exists
   become: true
+  when: not swap_file.stat.exists
 
 - name: Set swap file permissions
   ansible.builtin.file:
@@ -27,3 +27,12 @@
   ansible.builtin.command: swapon -a
   become: true
   when: not swap_file.stat.exists
+
+- name: Mount swap file
+  ansible.posix.mount:
+    name: none
+    src: "{{ swap_file_path }}"
+    fstype: swap
+    opts: sw
+    state: present
+  become: true

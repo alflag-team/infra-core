@@ -4,7 +4,6 @@
   ignore_unreachable: true
 
   roles:
-    - swap
     - apt
     - python3-pip
     - infra-core
