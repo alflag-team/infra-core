@@ -1,9 +1,4 @@
 ---
-- name: Check if swap file exists
-  ansible.builtin.stat:
-    path: "{{ swap_file_path }}"
-  register: swap_file
-
 - name: Create swap file
   ansible.builtin.command: dd if=/dev/zero of="{{ swap_file_path }}" bs=1M count={{ swap_file_size_mb }}
   become: true
