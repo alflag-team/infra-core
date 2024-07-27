@@ -1,0 +1,12 @@
+[submodule "terraform/cloudflare-access"]
+	path = terraform/cloudflare-access
+	url = git@github.com:alflag-team/cloudflare-access.git
+	branch = master
+[submodule "terraform/cloudflare-tunnel"]
+	path = terraform/cloudflare-tunnel
+	url = git@github.com:alflag-team/cloudflare-tunnel.git
+	branch = master
+[submodule "terraform/dns"]
+	path = terraform/dns
+	url = git@github.com:alflag-team/dns.git
+	branch = master
