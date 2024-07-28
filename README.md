@@ -15,7 +15,7 @@
 git clone --recursive git@github.com:alflag-team/infra-core.git
 ```
 
-# submodule の更新
+## submodule の更新
 
 ```bash
 git submodule update --init --recursive
