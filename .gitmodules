@@ -18,3 +18,7 @@
 	path = ansible/ansible-proxmox
 	url = git@github.com:alflag-team/ansible-proxmox.git
 	branch = master
+[submodule "ansible/ansible-common"]
+	path = ansible/ansible-common
+	url = git@github.com:alflag-team/ansible-common
+	branch = master
