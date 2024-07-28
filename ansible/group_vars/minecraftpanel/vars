@@ -1,0 +1,9 @@
+---
+swap_file_path: /swapfile
+swap_file_size_mb: "16384"
+
+db_login_unix_socket: "/var/run/mysqld/mysqld.sock"
+db_root_password: "{{ vault_db_root_password }}"
+db_pterodactyl_user: "{{ vault_db_pterodactyl_user }}"
+db_pterodactyl_password: "{{ vault_db_pterodactyl_password }}"
+db_pterodactyl_database: "{{ vault_db_pterodactyl_database }}"

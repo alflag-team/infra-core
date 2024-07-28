@@ -1,0 +1,35 @@
+---
+ansible_user: "{{ vault_ansible_user }}"
+ansible_private_key_file: "{{ vault_ansible_private_key_file}}"
+ansible_sudo_pass: "{{ vault_ansible_sudo_pass }}"
+
+user_infra_ssh_private_key: "{{ vault_user_infra_ssh_private_key }}"
+
+user_infra_name: "{{ vault_user_infra_name }}"
+user_infra_password: "{{ vault_user_infra_password }}"
+user_infra_salt: "{{ vault_user_infra_salt }}"
+
+user_minecraft_name: "{{ vault_user_minecraft_name }}"
+user_minecraft_password: "{{ vault_user_minecraft_password }}"
+user_minecraft_salt: "{{ vault_user_minecraft_salt }}"
+
+mysql_login_unix_socket: "/var/run/mysqld/mysqld.sock"
+mysql_root_password: "{{ vault_mysql_root_password }}"
+
+mysql_zabbix_dbname: "{{ vault_mysql_zabbix_dbname}}"
+mysql_zabbix_user: "{{ vault_mysql_zabbix_user }}"
+mysql_zabbix_password: "{{ vault_mysql_zabbix_password }}"
+mysql_zabbix_monitor_user: "{{ vault_mysql_zabbix_monitor_user }}"
+mysql_zabbix_monitor_password: "{{ vault_mysql_zabbix_monitor_password }}"
+
+mysql_minecraft_dbname: "{{ vault_mysql_minecraft_dbname}}"
+mysql_minecraft_user: "{{ vault_mysql_minecraft_user }}"
+mysql_minecraft_password: "{{ vault_mysql_minecraft_password }}"
+
+zabbix_dbhost: "localhost"
+zabbix_package_name: "zabbix-release.deb"
+zabbix_package_checksum: "sha256:b2a42b3aa88a1ac5260e01ddd4c504607c4674e61d5ad5cb63238a9ebcf07476" # curl -sL https://repo.zabbix.com/zabbix/6.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_6.0-4+ubuntu22.04_all.deb|sha256sum
+
+docker_gpg_checksum: "sha256:1500c1f56fa9e26b9b8f42452a553675796ade0807cdce11975eb98170b3a570" # curl -sL https://download.docker.com/linux/ubuntu/gpg|sha256sum
+
+cloudflared_tunnel_token__gateway: "{{ vault_cloudflared_tunnel_token__gateway }}"
