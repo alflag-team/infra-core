@@ -29,6 +29,9 @@
 - name: Setup minecraftproxy
   import_playbook: ansible-proxmox/minecraftproxy/setup.yml
 
+- name: Setup minecraftpanel
+  import_playbook: ansible-proxmox/minecraftpanel/setup.yml
+
 # - name: Setup steamg
 #   import_playbook: ansible-proxmox/steamg/setup.yml
 
