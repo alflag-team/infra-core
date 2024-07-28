@@ -10,3 +10,7 @@
 	path = terraform/dns
 	url = git@github.com:alflag-team/terraform-dns.git
 	branch = master
+[submodule "terraform/proxmox"]
+	path = terraform/proxmox
+	url = git@github.com:alflag-team/terraform-proxmox.git
+	branch = master
