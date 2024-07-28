@@ -1,7 +1,0 @@
----
-- name: Install sshpass
-  apt:
-    name:
-      - sshpass
-    state: present
-  become: true

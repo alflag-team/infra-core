@@ -1,6 +1,0 @@
----
-# - name: Setup common
-#   import_playbook: common/setup.yml
-
-- name: Setup honeypot
-  import_playbook: honeypot/setup.yml

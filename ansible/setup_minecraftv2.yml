@@ -1,6 +1,0 @@
----
-# - name: Setup common
-#   import_playbook: common/setup.yml
-
-- name: Setup minecraftv2
-  import_playbook: minecraftv2/setup.yml

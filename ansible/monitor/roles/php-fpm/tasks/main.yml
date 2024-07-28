@@ -1,4 +1,0 @@
----
-- name: Install php-fpm
-  include_tasks:
-    file: install.yml

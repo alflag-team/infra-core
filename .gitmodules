@@ -14,3 +14,7 @@
 	path = terraform/proxmox
 	url = git@github.com:alflag-team/terraform-proxmox.git
 	branch = master
+[submodule "ansible/proxmox"]
+	path = ansible/proxmox
+	url = git@github.com:alflag-team/ansible-proxmox.git
+	branch = master

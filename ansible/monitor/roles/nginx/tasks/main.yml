@@ -1,4 +1,0 @@
----
-- name: Install nginx
-  include_tasks:
-    file: install.yml

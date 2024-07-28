@@ -1,6 +1,0 @@
----
-- name: Install restic
-  apt:
-    name: restic
-    state: present
-  become: true

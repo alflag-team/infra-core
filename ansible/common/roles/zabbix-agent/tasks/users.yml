@@ -1,8 +1,0 @@
----
-- name: Add zabbix user to docker group
-  ansible.builtin.user:
-    name: zabbix
-    groups: docker
-    append: true
-  become: true
-  notify: restart zabbix-agent

@@ -1,9 +1,0 @@
----
-- name: Setup gateway
-  hosts: gateway
-  ignore_unreachable: true
-
-  roles:
-    - apt
-    - docker
-    #- cloudflared
