@@ -1,20 +1,20 @@
-[submodule "terraform/cloudflare-access"]
-	path = terraform/cloudflare-access
+[submodule "terraform/terraform-cloudflare-access"]
+	path = terraform/terraform-cloudflare-access
 	url = git@github.com:alflag-team/terraform-cloudflare-access.git
 	branch = master
-[submodule "terraform/cloudflare-tunnel"]
-	path = terraform/cloudflare-tunnel
+[submodule "terraform/terraform-cloudflare-tunnel"]
+	path = terraform/terraform-cloudflare-tunnel
 	url = git@github.com:alflag-team/terraform-cloudflare-tunnel.git
 	branch = master
-[submodule "terraform/dns"]
-	path = terraform/dns
+[submodule "terraform/terraform-dns"]
+	path = terraform/terraform-dns
 	url = git@github.com:alflag-team/terraform-dns.git
 	branch = master
-[submodule "terraform/proxmox"]
-	path = terraform/proxmox
+[submodule "terraform/terraform-proxmox"]
+	path = terraform/terraform-proxmox
 	url = git@github.com:alflag-team/terraform-proxmox.git
 	branch = master
-[submodule "ansible/proxmox"]
-	path = ansible/proxmox
+[submodule "ansible/ansible-proxmox"]
+	path = ansible/ansible-proxmox
 	url = git@github.com:alflag-team/ansible-proxmox.git
 	branch = master
