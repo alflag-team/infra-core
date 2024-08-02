@@ -1,0 +1,6 @@
+---
+# - name: Setup common
+#   import_playbook: ansible-common/setup.yml
+
+- name: Setup dify
+  import_playbook: ansible-proxmox/dify/setup.yml
