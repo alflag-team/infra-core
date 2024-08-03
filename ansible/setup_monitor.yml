@@ -1,6 +1,3 @@
 ---
-# - name: Setup common
-#   import_playbook: ansible-common/setup.yml
-
 - name: Setup monitor
   import_playbook: ansible-proxmox/monitor/setup.yml
