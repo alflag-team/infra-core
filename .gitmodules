@@ -22,3 +22,7 @@
 	path = ansible/ansible-common
 	url = git@github.com:alflag-team/ansible-common
 	branch = master
+[submodule "terraform/terraform-oraclecloud"]
+	path = terraform/terraform-oraclecloud
+	url = git@github.com:alflag-team/terraform-oraclecloud.git
+	branch = master
