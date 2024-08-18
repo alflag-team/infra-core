@@ -1,0 +1,5 @@
+services:
+  tfc-agent:
+    image: hashicorp/tfc-agent:latest
+    env_file:
+      - env/tfc-agent.env
