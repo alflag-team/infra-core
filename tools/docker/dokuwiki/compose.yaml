@@ -10,4 +10,4 @@ services:
       #PHP_MEMORYLIMIT: 256M
       #PHP_UPLOADLIMIT: 128M
     volumes:
-      - /opt/infra-core/data/dokuwiki:/dokuwiki
+      - /opt/infra-core/data/dokuwiki:/storage
