@@ -1,0 +1,13 @@
+services:
+  dokuwiki:
+    image: dokuwiki/dokuwiki:stable
+    user: "1000:1000"
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      PHP_TIMEZONE: Asia/Tokyo
+      #PHP_MEMORYLIMIT: 256M
+      #PHP_UPLOADLIMIT: 128M
+    volumes:
+      - ../../../data/dokuwiki:/dokuwiki
