@@ -37,7 +37,7 @@ services:
       DB_HOST: "database"
       DB_PORT: "3306"
     env_file:
-      - env/database.env
+      - env/panel.env
 networks:
   default:
     ipam:
