@@ -7,4 +7,4 @@ services:
       - --no-autoupdate
       - run
     env_file:
-      - env/database.env
+      - env/tunnel.env
