@@ -1,0 +1,10 @@
+services:
+  tunnel:
+    image: cloudflare/cloudflared
+    restart: unless-stopped
+    command:
+      - tunnel
+      - --no-autoupdate
+      - run
+    env_file:
+      - env/database.env
