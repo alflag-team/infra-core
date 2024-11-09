@@ -14,14 +14,6 @@
 	path = terraform/terraform-proxmox
 	url = git@github.com:alflag-team/terraform-proxmox.git
 	branch = master
-[submodule "ansible/ansible-proxmox"]
-	path = ansible/ansible-proxmox
-	url = git@github.com:alflag-team/ansible-proxmox.git
-	branch = master
-[submodule "ansible/ansible-common"]
-	path = ansible/ansible-common
-	url = git@github.com:alflag-team/ansible-common
-	branch = master
 [submodule "terraform/terraform-oraclecloud"]
 	path = terraform/terraform-oraclecloud
 	url = git@github.com:alflag-team/terraform-oraclecloud.git
