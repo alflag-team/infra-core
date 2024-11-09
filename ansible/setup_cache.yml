@@ -1,3 +1,0 @@
----
-- name: Setup cache
-  import_playbook: ansible-proxmox/cache/setup.yml

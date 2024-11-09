@@ -1,3 +1,0 @@
----
-- name: Setup minecraftpanel
-  import_playbook: ansible-proxmox/minecraftpanel/setup.yml

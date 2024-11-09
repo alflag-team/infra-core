@@ -1,3 +1,0 @@
----
-- name: Setup database
-  import_playbook: ansible-proxmox/database/setup.yml

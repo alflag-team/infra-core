@@ -1,3 +1,0 @@
----
-- name: Setup dify
-  import_playbook: ansible-proxmox/dify/setup.yml

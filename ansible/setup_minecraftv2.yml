@@ -1,3 +1,0 @@
----
-- name: Setup minecraftv2
-  import_playbook: ansible-proxmox/minecraftv2/setup.yml

@@ -1,3 +1,0 @@
----
-- name: Setup wiki
-  import_playbook: ansible-proxmox/wiki/setup.yml

@@ -1,3 +1,0 @@
----
-- name: Setup monitor
-  import_playbook: ansible-proxmox/monitor/setup.yml

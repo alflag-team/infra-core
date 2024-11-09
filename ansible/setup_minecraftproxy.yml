@@ -1,3 +1,0 @@
----
-- name: Setup minecraftproxy
-  import_playbook: ansible-proxmox/minecraftproxy/setup.yml

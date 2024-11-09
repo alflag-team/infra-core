@@ -1,3 +1,0 @@
----
-- name: Setup steamg
-  import_playbook: ansible-proxmox/steamg/setup.yml

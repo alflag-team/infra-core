@@ -1,3 +1,0 @@
----
-- name: Setup admin
-  import_playbook: ansible-proxmox/admin/setup.yml

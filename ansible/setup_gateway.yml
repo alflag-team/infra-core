@@ -1,3 +1,0 @@
----
-- name: Setup gateway
-  import_playbook: ansible-proxmox/gateway/setup.yml
