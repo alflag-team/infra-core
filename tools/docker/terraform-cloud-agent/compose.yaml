@@ -2,5 +2,5 @@ services:
   tfc-agent:
     image: hashicorp/tfc-agent:latest
     env_file:
-      - env/tfc-agent.env
+      - /home/infra/secrets/terraform-cloud-agent.env
     restart: always
