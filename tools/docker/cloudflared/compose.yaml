@@ -7,4 +7,4 @@ services:
       - --no-autoupdate
       - run
     env_file:
-      - env/tunnel.env
+      - /home/infra/secrets/tunnel.env
