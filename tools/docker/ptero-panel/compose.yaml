@@ -9,7 +9,7 @@ services:
       MYSQL_DATABASE: "panel"
       MYSQL_USER: "pterodactyl"
     env_file:
-      - env/database.env
+      - /home/infra/secrets/ptero-panel.env
   cache:
     image: redis:alpine
     restart: always
@@ -37,7 +37,7 @@ services:
       DB_HOST: "database"
       DB_PORT: "3306"
     env_file:
-      - env/panel.env
+      - /home/infra/secrets/ptero-panel.env
 networks:
   default:
     ipam:
